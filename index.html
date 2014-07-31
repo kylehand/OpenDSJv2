@@ -5,39 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>OpenDSJ version 2</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-  <!-- Add fancyBox main JS and CSS files -->
-  <script type="text/javascript" src="js/jquery.fancybox.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" media="screen" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!--<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">-->
 
     <style type="text/css">
-      body {height:100%; font-family:helvetica, arial, tahoma, sans-serif;margin:0;padding:0;}
+      body {height:100%;font-family:helvetica,arial,tahoma,sans-serif;font-size:13px;line-height:18px;margin:0;padding:0;}
       #main-top, #main-col{background-color:#FFF;z-index:3}
-      #main-top{height:50px;top:10px;left:10px;width:98%}
+      #main-top{height:50px;top:0;left:0;width:100%}
       #main-col{width:270px;left:10px;top:80px}
-      #main-col li{list-style-type:none; }
-      #main-col .nav-tabs li {display:inline;-webkit-border-top-left-radius: 5px;
--webkit-border-top-right-radius: 5px;
--moz-border-radius-topleft: 5px;
--moz-border-radius-topright: 5px;
-border-top-left-radius: 5px;
-border-top-right-radius: 5px;border: 1px solid #555;}
-      #main-col .nav-tabs {border-bottom: 1px solid #000}
-      #main-col .nav-tabs a {padding:10px;font-size:.9em; text-decoration: none}
-      #main-col .nav-tabs li.active {border-bottom: 1px solid #FFF}
-      #main-col .nav-tabs a:hover {text-decoration:underline}
+      #main-col li{list-style-type:none}
+      #main-col .nav-tabs {margin: 0;padding:0;display: block;height: 39px;}
+      #main-col .nav-tabs li {display: block;padding: 10px; font-size: .9em; text-decoration: none; cursor: pointer; width: 50%; float: left; box-sizing: border-box; -moz-box-sizing: border-box; text-align: center; background-color: #D2D2D2;} 
+      #main-col .nav-tabs li.active {background-color: #FFF}
       iframe {position:absolute;width:100%;height:100%;z-index:1}
-      #candidate-gp {padding: 15px 0 15px 35px}
-      #candidate-gp ul {margin:0;padding:0}
-      #candidate-gp li {margin-right:30px;margin-bottom:25px;width:75px;float:left}
-      #candidate-gp img {}
+      .logo{}
+      .logo a, .meta-menu li a{text-decoration:none;color:#000;padding:16px;font-size:1.5em;float:left}
+      .candidate-gp {padding: 26px 0 15px 42px}
+      .candidate-gp ul {margin:0;padding:0}
+      .candidate-gp li {margin-right:30px;margin-bottom:25px;width:75px;float:left}
+      .candidate-gp img {}
       .absolute{position:absolute}
       .relative{position:relative}
+      .left{float:left}
+      .right{float:right}
+      .cf{clear:both}
+      .meta-menu ul{margin:0;}
+      .meta-menu li{list-style-type:none;display:inline}
+      .meta-menu li a{font-size:1.1em}
+      #blackout{background-color: rgba(0, 0, 0, 0.7);display:block;height:100%;width:100%;position:absolute;z-index:100;}
+      .modal {background-color: rgba(255, 255, 255, 1);position: relative;width: 70%;padding: 3%;margin: 10% auto;border-radius: 5px;max-width:800px}
+
     </style>
-    <script type="text/javascript">
-      $(".inline-group").fancybox();
-      </script>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -50,22 +49,28 @@ border-top-right-radius: 5px;border: 1px solid #555;}
   <body>
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d101517.69487540836!2d-121.90976677074487!3d37.33237562374415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1405316652050" width="100%" height="100%" frameborder="0"></iframe>
     <div class="absolute" id="main-top">
-      <section class="relative col-lg-12">
-        <a href="#">
-          <img src="http://placehold.it/100x40" width="100" height="40" alt="" />
-        </a>
+      <section class="relative">
+        <div class="logo left">
+          <a href="#">Open Disclosure San Jose</a>
+        </div>
+        <div class="meta-menu right">
+          <ul>
+            <li><a id="about" href="#">About</a></li>
+            <li><a id="importance" href="#">Importance</a></li>
+            <li><a id="whats-pac" href="#">Whats a PAC</a></li>
+          </ul>
+        </div>
+        <div class="cf"></div>
       </section>
     </div>
     <div class="absolute" id="main-col">
-      <section class="col-lg-12">
-          <div class="row">
-            <ul class="nav nav-tabs" role="tablist">
-              <li class="active"><a href="#">Public</a></li>
-              <li><a href="#">PAC</a></li>
+      <section>
+          <div id="tabs">
+            <ul class="nav nav-tabs">
+              <li class="primary-btn active">Primaries</li>
+              <li class="runoff-btn">Run offs</li>
             </ul>
-
-          </div>
-          <div id="candidate-gp" class="row">
+          <div id="primary" class="candidate-gp">
           <ul>
             <li>
               <a href="#">
@@ -93,31 +98,79 @@ border-top-right-radius: 5px;border: 1px solid #555;}
             </a>
             </li>
           </ul>
-          <p style="clear:both"><a href="#inline" class="inline-group" rel="group01">Option 1</a></p>
-          <!--<p><a href="#inline-02" >Option 2</a></p>
-          <p><a href="#inline-03" >Option 3</a></p>-->
+          <div class="cf"></div>
+          </div>
+          <div id="runoff" class="candidate-gp" style="display:none;">
+          <ul>
+            <li>
+              <a href="#">
+                <img src="http://placehold.it/75x75" height="75" width="75" alt="" class="col-lg-4 candidate" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+              <img src="http://placehold.it/75x75" height="75" width="75" alt="" class="col-lg-4 candidate" />
+            </a>
+            </li>
+            <li>
+              <a href="#">
+              <img src="http://placehold.it/75x75" height="75" width="75" alt="" class="col-lg-4 candidate" />
+            </a>
+            </li>
+            <li>
+              <a href="#">
+              <img src="http://placehold.it/75x75" height="75" width="75" alt="" class="col-lg-4 candidate" />
+            </a>
+            </li>
+            <li>
+              <a href="#">
+              <img src="http://placehold.it/75x75" height="75" width="75" alt="" class="col-lg-4 candidate" />
+            </a>
+            </li>
+          </ul>
+          <div class="cf"></div>
+          </div>
+        
         </div>
       </section>
       </div>
-      <div class="col-lg-9">
-        <!-- Need this to hold the space -->
-      </div>
 
     </div>
-    <div style="display:none">
-      <div id="inline" >
-        <p>Inline 01</p>
+    <script>
+    /* Public Fund button */
+    $('.primary-btn').click(function() {
+      $(this).addClass('active');
+      $('.runoff-btn').removeClass('active');
+      $('#primary').show();
+      $('#runoff').hide();
+      });
+    /* Private Fund button */
+    $('.runoff-btn').click(function() {
+      $(this).addClass('active');
+      $('.primary-btn').removeClass('active');
+      $('#runoff').show();
+      $('#primary').hide();
+      });
+    //$('#blackout').show();
+
+    $('#blackout').click(function() {
+      $('#blackout').css("display": "block")
+      });
+
+    </script>
+    <div id="blackout">
+      <div class="modal" id="about-div">
+        <h1>About</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
-      <!--<div id="inline-02" style="display:none">
-        <p>Inline 02</p>
+      <div class="modal" id="importance" style="display:none;">
+        <h1>What's the Importance</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
-      <div id="inline-03" style="display:none">
-        <p>Inline 03</p>
-      </div>-->
-
-
-
-
-
+      <div class="modal" id="whats-pac-div" style="display:none;">
+        <h1>What's a PAC</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
   </body>
 </html>
