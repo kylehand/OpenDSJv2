@@ -11,4 +11,8 @@
         $("#primary").css("display", "none");
         $("#runoff").css("display", "block");
     });
+    $("#importance").click(function () {
+        $('#importancediv').css('display', 'block');
+        //$(this).next('#importancediv').stop().show('slide', {direction: 'down'}, 1400);
+    });
 })

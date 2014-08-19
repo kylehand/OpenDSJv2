@@ -176,19 +176,29 @@ iframe {
         color: #fff;
         background-color: #000;
         font-size: 15px;
+        width: 200px;
         opacity: 1;
         padding: 10px;
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
+        cursor:pointer;
+    }
+
+    #more_info #extra {
+        margin: 0px;
     }
 
 #more_info {
     /*top: 37px;*/
     text-align: center;
     width: 100%;
-    position:absolute;
-    bottom:0;
+    position: absolute;
+    bottom: 0;
 }
+
+   #importancediv, #nextStepsDiv, #actionDiv {
+        display: none;
+    }
 
     /*#more_info #info {
         opacity: 1;
@@ -205,6 +215,6 @@ iframe {
         border-bottom-left-radius: 5px;
     }*/
 
-        #more_info #info:hover {
-            cursor: pointer;
-        }
+    #more_info #info:hover {
+        cursor: pointer;
+    }
