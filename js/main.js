@@ -1,15 +1,38 @@
 ﻿$(document).ready(function () {
     $(".primary-btn").click(function () {
+        $("#tabs li").removeClass("active");
         $(".primary-btn").addClass("active");
-        $(".runoff-btn").removeClass("active");
+        $(".candidate-gp").css("display", "none");
         $("#primary").css("display", "block");
-        $("#runoff").css("display", "none");
     });
     $(".runoff-btn").click(function () {
+        $("#tabs li").removeClass("active");
         $(".runoff-btn").addClass("active");
-        $(".primary-btn").removeClass("active");
-        $("#primary").css("display", "none");
+        $(".candidate-gp").css("display", "none");
         $("#runoff").css("display", "block");
+        var name = 'Cortese';
+        var total = '1.12m';
+        var contrib = '1.1k';
+        var percent = '15%';
+        $( "h2" ).html(name);
+        $( "h3" ).html(total);
+        $( "h4" ).html(contrib);
+        $( "h5" ).html(percent);
+    });
+    $(".pac-btn").click(function () {
+        $("#tabs li").removeClass("active");
+        $(".pac-btn").addClass("active");
+        $(".candidate-gp").css("display", "none");
+        $("#pac").css("display", "block");
+        var name = 'Cortese';
+        var total = '1.12m';
+        var contrib = '1.1k';
+        var percent = '15%';
+        $( "h2" ).html(name);
+        $( "h3" ).html(total);
+        $( "h4" ).html(contrib);
+        $( "h5" ).html(percent);
+
     });
     $("#importance").click(function () {
         $('#importancediv').css('display', 'block');
@@ -23,71 +46,127 @@
 // This code will show and hide the iframes
 // Primaries
 $('.liccardo-pri-btn').click(function() {
-    $('iframe').hide();
-    $('iframe.liccardo-pri').show();
+    $('iframe').css('display', 'none');
+    $('iframe.liccardo-pri').css('display', 'block');
     var name = 'Licarrdo';
-    var pri_total = '1.2m';
-    var pri_contrib = '1k';
-    var pri_per = '20%';
+    var total = '1.2m';
+    var contrib = '1k';
+    var percent = '20%';
     $( "h2" ).html(name);
-    $( "h3" ).html(pri_total);
-    $( "h4" ).html(pri_contrib);
-    $( "h5" ).html(pri_per);
+    $( "h3" ).html(total);
+    $( "h4" ).html(contrib);
+    $( "h5" ).html(percent);
 
-});
-
-$('.nguyen-pri-btn').click(function() {
-    $('iframe').hide();
-    $('iframe.nguyen-pri').show();
-    var name = 'Nguyen';
-    var pri_total = '800k';
-    var pri_contrib = '1.3k';
-    var pri_per = '5%';
-    $( "h2" ).html(name);
-    $( "h3" ).html(pri_total);
-    $( "h4" ).html(pri_contrib);
-    $( "h5" ).html(pri_per);
-    
 });
 
 $('.cortese-pri-btn').click(function() {
-    $('iframe').hide();
-    $('iframe.cortese-pri').show();
+    $('iframe').css('display', 'none');
+    $('iframe.cortese-pri').css('display', 'block');
     var name = 'Cortese';
-    var pri_total = '1.12m';
-    var pri_contrib = '1.1k';
-    var pri_per = '15%';
+    var total = '1.12m';
+    var contrib = '1.1k';
+    var percent = '15%';
     $( "h2" ).html(name);
-    $( "h3" ).html(pri_total);
-    $( "h4" ).html(pri_contrib);
-    $( "h5" ).html(pri_per);
+    $( "h3" ).html(total);
+    $( "h4" ).html(contrib);
+    $( "h5" ).html(percent);
+});
+
+$('.nguyen-pri-btn').click(function() {
+    $('iframe').css('display', 'none');
+    $('iframe.nguyen-pri').css('display', 'block');
+    var name = 'Nguyen';
+    var total = '800k';
+    var contrib = '1.3k';
+    var percent = '5%';
+    $( "h2" ).html(name);
+    $( "h3" ).html(total);
+    $( "h4" ).html(contrib);
+    $( "h5" ).html(percent);
+    
 });
 
 $('.oliverio-pri-btn').click(function() {
-    $('iframe').hide();
-    $('iframe.oliverio-pri').show();
+    $('iframe').css('display', 'none');
+    $('iframe.oliverio-pri').css('display', 'block');
     var name = 'Oliverio';
-    var pri_total = '500k';
-    var pri_contrib = '500';
-    var pri_per = '1%';
+    var total = '500k';
+    var contrib = '500';
+    var percent = '1%';
     $( "h2" ).html(name);
-    $( "h3" ).html(pri_total);
-    $( "h4" ).html(pri_contrib);
-    $( "h5" ).html(pri_per);
+    $( "h3" ).html(total);
+    $( "h4" ).html(contrib);
+    $( "h5" ).html(percent);
 });
 
 $('.herrera-pri-btn').click(function() {
-    $('iframe').hide();
-    $('iframe.herrera-pri').show();
+    $('iframe').css('display', 'none');
+    $('iframe.herrera-pri').css('display', 'block');
     var name = 'Herrera';
-    var pri_total = '$200';
-    var pri_contrib = '750';
-    var pri_per = '2%';
+    var total = '$200';
+    var contrib = '750';
+    var percent = '2%';
     $( "h2" ).html(name);
-    $( "h3" ).html(pri_total);
-    $( "h4" ).html(pri_contrib);
-    $( "h5" ).html(pri_per);
+    $( "h3" ).html(total);
+    $( "h4" ).html(contrib);
+    $( "h5" ).html(percent);
 });
 
 //Run offs
+
+$('.liccardo-run-btn').click(function() {
+    $('iframe').css('display', 'none');
+    $('iframe.liccardo-run').css('display', 'block');
+    var name = 'Licarrdo';
+    var total = '1.2m';
+    var contrib = '1k';
+    var percent = '20%';
+    $( "h2" ).html(name);
+    $( "h3" ).html(total);
+    $( "h4" ).html(contrib);
+    $( "h5" ).html(percent);
+
+});
+
+$('.cortese-run-btn').click(function() {
+    $('iframe').css('display', 'none');
+    $('iframe.cortese-run').css('display', 'block');
+    var name = 'Cortese';
+    var total = '1.12m';
+    var contrib = '1.1k';
+    var percent = '15%';
+    $( "h2" ).html(name);
+    $( "h3" ).html(total);
+    $( "h4" ).html(contrib);
+    $( "h5" ).html(percent);
+});
+
+//PACs
+
+$('.liccardo-pac-btn').click(function() {
+    $('iframe').css('display', 'none');
+    $('iframe.liccardo-pac').css('display', 'block');
+    var name = 'Licarrdo';
+    var total = '1.2m';
+    var contrib = '1k';
+    var percent = '20%';
+    $( "h2" ).html(name);
+    $( "h3" ).html(total);
+    $( "h4" ).html(contrib);
+    $( "h5" ).html(percent);
+
+});
+
+$('.cortese-pac-btn').click(function() {
+    $('iframe').css('display', 'none');
+    $('iframe.cortese-pac').css('display', 'block');
+    var name = 'Cortese';
+    var total = '1.12m';
+    var contrib = '1.1k';
+    var percent = '20%';
+    $( "h2" ).html(name);
+    $( "h3" ).html(total);
+    $( "h4" ).html(contrib);
+    $( "h5" ).html(percent);
+});
 })
