@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+$(document).ready(function () {
     $(".primary-btn").click(function () {
         $("#tabs li").removeClass("active");
         $(".primary-btn").addClass("active");
@@ -160,10 +160,10 @@
     $('.liccardo-pac-btn').click(function() {
         $('iframe').css('display', 'none');
         $('iframe.liccardo-pac').css('display', 'block');
-        var name = 'Licarrdo';
-        var total = '1.2m';
-        var contrib = '3.2k';
-        var percent = '55%';
+        var name = 'Pacs Supporting Licarrdo';
+        var total = 'x.m';
+        var contrib = 'xk';
+        var percent = 'x%';
         $( "h2" ).html(name);
         $( "h3" ).html(total);
         $( "h4" ).html(contrib);
@@ -174,10 +174,10 @@
     $('.cortese-pac-btn').click(function() {
         $('iframe').css('display', 'none');
         $('iframe.cortese-pac').css('display', 'block');
-        var name = 'Cortese';
-        var total = '1.12m';
-        var contrib = '1.1k';
-        var percent = '20%';
+        var name = 'Pacs Supporting Cortese';
+        var total = 'x.m';
+        var contrib = 'x.k';
+        var percent = 'x%';
         $( "h2" ).html(name);
         $( "h3" ).html(total);
         $( "h4" ).html(contrib);
