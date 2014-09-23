@@ -45,16 +45,16 @@
         $("#blackout").css("display", "none");
         $(".modal").css("display", "none");
     });
-    $(".importance-btn").click(function () {
-        $("#blackout").css("display", "block");
-        $(".modal").css("display", "none");
-        $("#importance-div").css("display", "block");
-    });
-    $(".whats-a-pac-btn").click(function () {
-        $("#blackout").css("display", "block");
-        $(".modal").css("display", "none");
-        $("#whats-a-pac-div").css("display", "block");
-    });
+    // $(".importance-btn").click(function () {
+    //     $("#blackout").css("display", "block");
+    //     $(".modal").css("display", "none");
+    //     $("#importance-div").css("display", "block");
+    // });
+    // $(".whats-a-pac-btn").click(function () {
+    //     $("#blackout").css("display", "block");
+    //     $(".modal").css("display", "none");
+    //     $("#whats-a-pac-div").css("display", "block");
+    // });
     $(".about-btn").click(function () {
         $("#blackout").css("display", "block");
         $(".modal").css("display", "none");
