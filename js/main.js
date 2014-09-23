@@ -66,7 +66,7 @@
     $('.liccardo-pri-btn').click(function() {
         $('iframe').css('display', 'none');
         $('iframe.liccardo-pri').css('display', 'block');
-        var name = 'Liccardo';
+        var name = 'Licarrdo';
         var total = '1.2m';
         var contrib = '1k';
         var percent = '20%';
