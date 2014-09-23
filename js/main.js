@@ -11,9 +11,9 @@
         $(".candidate-gp").css("display", "none");
         $("#runoff").css("display", "block");
         var name = 'Cortese';
-        var total = '1.12m';
-        var contrib = '1.1k';
-        var percent = '15%';
+        var total = '1.13m';
+        var contrib = '4.0k';
+        var percent = '48.8%';
         $( "h2" ).html(name);
         $( "h3" ).html(total);
         $( "h4" ).html(contrib);
@@ -160,7 +160,7 @@
     $('.liccardo-pac-btn').click(function() {
         $('iframe').css('display', 'none');
         $('iframe.liccardo-pac').css('display', 'block');
-        var name = 'Licarrdo';
+        var name = 'Liccarrdo';
         var total = '1.2m';
         var contrib = '1k';
         var percent = '20%';
