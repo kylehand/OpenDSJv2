@@ -133,15 +133,9 @@ $(document).ready(function () {
         $('iframe').css('display', 'none');
         $('iframe.liccardo-run').css('display', 'block');
         var name = 'Liccarrdo';
-<<<<<<< HEAD
         var total = '1.24m';
         var contrib = '3.2k';
         var percent = '55%';
-=======
-        var total = '1.2m';
-        var contrib = '1k';
-        var percent = '20%';
->>>>>>> FETCH_HEAD
         $( "h2" ).html(name);
         $( "h3" ).html(total);
         $( "h4" ).html(contrib);
@@ -166,13 +160,10 @@ $(document).ready(function () {
     $('.liccardo-pac-btn').click(function() {
         $('iframe').css('display', 'none');
         $('iframe.liccardo-pac').css('display', 'block');
-<<<<<<< HEAD
         var name = 'Pacs Supporting Licarrdo';
         var total = 'x.m';
         var contrib = 'xk';
         var percent = 'x%';
-=======
->>>>>>> FETCH_HEAD
         $( "h2" ).html(name);
         $( "h3" ).html(total);
         $( "h4" ).html(contrib);
