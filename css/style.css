@@ -207,7 +207,7 @@ font-size: 1.1em;
     border-top-left-radius: 5px;
     cursor:pointer;
     margin: 0 10px 0 0;
-    height: 30px;
+    height: 300px;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     transition: margin-top 250ms ease-out;
