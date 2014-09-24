@@ -64,8 +64,7 @@ $(document).ready(function () {
 // This code will show and hide the iframes
 // Primaries
     $('.liccardo-pri-btn').click(function() {
-        $('iframe').css('display', 'none');
-        $('iframe.liccardo-pri').css('display', 'block');
+        map.renderContributions('primary','liccardo');
         var name = 'Liccardo';
         var total = '1.2m';
         var contrib = '3.2k';
@@ -77,8 +76,7 @@ $(document).ready(function () {
     });
 
     $('.cortese-pri-btn').click(function() {
-        $('iframe').css('display', 'none');
-        $('iframe.cortese-pri').css('display', 'block');
+        map.renderContributions('primary','cortese');
         var name = 'Cortese';
         var total = '930k';
         var contrib = '3.2k';
@@ -90,8 +88,7 @@ $(document).ready(function () {
     });
 
     $('.nguyen-pri-btn').click(function() {
-        $('iframe').css('display', 'none');
-        $('iframe.nguyen-pri').css('display', 'block');
+        map.renderContributions('primary','nguyen');
         var name = 'Nguyen';
         var total = '473k';
         var contrib = '1.7k';
@@ -103,8 +100,7 @@ $(document).ready(function () {
     });
 
     $('.oliverio-pri-btn').click(function() {
-        $('iframe').css('display', 'none');
-        $('iframe.oliverio-pri').css('display', 'block');
+        map.renderContributions('primary','oliverio');
         var name = 'Oliverio';
         var total = '161k';
         var contrib = '381';
@@ -116,8 +112,7 @@ $(document).ready(function () {
     });
 
     $('.herrera-pri-btn').click(function() {
-        $('iframe').css('display', 'none');
-        $('iframe.herrera-pri').css('display', 'block');
+        map.renderContributions('primary','herrera');
         var name = 'Herrera';
         var total = '$115k';
         var contrib = '179';
@@ -130,8 +125,7 @@ $(document).ready(function () {
 
     //Run offs
     $('.liccardo-run-btn').click(function() {
-        $('iframe').css('display', 'none');
-        $('iframe.liccardo-run').css('display', 'block');
+        map.renderContributions('runoff','liccardo');
         var name = 'Liccardo';
         var total = '1.24m';
         var contrib = '3.2k';
@@ -144,8 +138,7 @@ $(document).ready(function () {
     });
 
     $('.cortese-run-btn').click(function() {
-        $('iframe').css('display', 'none');
-        $('iframe.cortese-run').css('display', 'block');
+        map.renderContributions('runoff','cortese');
         var name = 'Cortese';
         var total = '1.13m';
         var contrib = '4.1k';
@@ -158,8 +151,7 @@ $(document).ready(function () {
 
     //PACs
     $('.liccardo-pac-btn').click(function() {
-        $('iframe').css('display', 'none');
-        $('iframe.liccardo-pac').css('display', 'block');
+        map.renderContributions('pac','liccardo');
         var name = 'Pacs Supporting Licarrdo';
         var total = 'x.m';
         var contrib = 'xk';
@@ -172,8 +164,7 @@ $(document).ready(function () {
     });
 
     $('.cortese-pac-btn').click(function() {
-        $('iframe').css('display', 'none');
-        $('iframe.cortese-pac').css('display', 'block');
+        map.renderContributions('pac','cortese');
         var name = 'Pacs Supporting Cortese';
         var total = 'x.m';
         var contrib = 'x.k';
