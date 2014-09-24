@@ -132,7 +132,7 @@ $(document).ready(function () {
     $('.liccardo-run-btn').click(function() {
         $('iframe').css('display', 'none');
         $('iframe.liccardo-run').css('display', 'block');
-        var name = 'Liccarrdo';
+        var name = 'Liccardo';
         var total = '1.24m';
         var contrib = '3.2k';
         var percent = '55%';
