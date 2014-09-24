@@ -214,9 +214,10 @@ font-size: 1.1em;
 }
 
 #more_info #extra li div{
-    margin-top: 10px;
-    font-align:left;
+    margin-top: 15px;
+    text-align:left;
     font-weight:200;
+    font-size: 13px;
 }
 
 #more_info #extra li:hover {
