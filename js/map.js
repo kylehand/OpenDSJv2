@@ -11,10 +11,12 @@ function Opendisclosure() {
    */
   this.default_type = 'primary';
   this.default_candidate = 'Nguyen';
+  this.default_deadline = '2014-08-01';
   this.number_of_shapefiles = 0;
   this.map_options = {
-    zoom: 10,
-    center: new google.maps.LatLng(37.3393900, -121.8949600),
+    zoom: 11,
+    // google.maps.LatLng( LATITUDE, LONGITUDE ),
+    center: new google.maps.LatLng( 37.3393900, -121.8949600),
     /*
      * HYBRID
      * ROADMAP
@@ -79,7 +81,7 @@ function Opendisclosure() {
     // When shapes are done loading, loop through contributions and draw shapes
     $.when.apply( this, queries ).then(function() {
       map.zip_codes = shapes;
-      map.renderContributions(map.default_type, map.default_candidate);
+      map.renderContributions(map.default_type, map.default_candidate, map.default_deadline);
     });
   };
 
@@ -98,10 +100,11 @@ function Opendisclosure() {
    * @param type value should be primary, runoff, pac
    * @param candidate name of candidate associated with contributions
    */
-  this.renderContributions = function(type, candidate) {
+  this.renderContributions = function(type, candidate, deadline) {
     type = type.toLowerCase();
     candidate = candidate.toLowerCase();
-    //console.log("Render Contributions for " + candidate + " / " + type);
+    deadline = deadline.toLowerCase();
+    console.log("Render Contributions for " + candidate + " / " + type + " / " + deadline);
     // if polygons array already has data, go through and wipe it clean
     // from map
     if (this.polygons.length > 0) {
@@ -114,23 +117,26 @@ function Opendisclosure() {
     var polygons = this.polygons;
     if (typeof this.contributions[type] != 'undefined') {
       if (typeof this.contributions[type][candidate] != 'undefined') {
-        $.each(this.contributions[type][candidate], function (i, amount) {
-          if (typeof map.zip_codes[i] != 'undefined') {
-            var color = '#feb24c';
-            map.polygons.push(new google.maps.Polygon({
-              paths: map.zip_codes[i],
-              strokeColor: '#FF0000',
-              strokeOpacity: 0.8,
-              strokeWeight: 1,
-              fillColor: color,
-              fillOpacity: .5,
-              clickable: true,
-              name: "Zip Code: " + i,
-              total: "Contributions: $" + amount,
-              shape_color: color
-            }));
-          }
-        });
+        if (typeof this.contributions[type][candidate][deadline] != 'undefined') {
+          $.each(this.contributions[type][candidate][deadline], function (i, row) {
+            console.log(i + " " + row.color + " " + row.amount);
+            if (typeof map.zip_codes[i] != 'undefined') {
+              var color = '#feb24c';
+              map.polygons.push(new google.maps.Polygon({
+                paths: map.zip_codes[i],
+                strokeColor: row.color,
+                strokeOpacity: 0.8,
+                strokeWeight: 1,
+                fillColor: color,
+                fillOpacity: .5,
+                clickable: true,
+                name: "Zip Code: " + i,
+                total: "Contributions: $" + row.amount,
+                shape_color: row.color
+              }));
+            }
+          });
+        }
       }
     }
 
