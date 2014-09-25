@@ -70,7 +70,7 @@ border-radius: 50px;
     background-color: initial;
     text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.85);
 }
-iframe {
+iframe, #map {
     position: absolute;
     width: 100% !important;
     height: 100% !important;
