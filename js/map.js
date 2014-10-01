@@ -11,7 +11,7 @@ function Opendisclosure() {
    */
   this.default_type = 'primary';
   this.default_candidate = 'Nguyen';
-  this.number_of_shapefiles = 0;
+  this.number_of_shapefiles = 13;
   this.map_options = {
     zoom: 10,
     center: new google.maps.LatLng(37.3393900, -121.8949600),
