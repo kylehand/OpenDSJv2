@@ -65,7 +65,7 @@ function Opendisclosure() {
     for(i=0;i<=this.number_of_shapefiles;i++) {
       // Fetch zip codes
       queries.push(
-        $.getJSON("../shapes/zips_" + i + ".json", function (response) {
+        $.getJSON("./shapes/zips_" + i + ".json", function (response) {
           //console.log( "success" );
           $.each(response, function (index, item) {
             var coords = [];
@@ -89,7 +89,7 @@ function Opendisclosure() {
    *
    */
   this.loadContributions = function() {
-    $.getJSON("../contributions.json", function (response) {
+    $.getJSON("./contributions.json", function (response) {
       map.contributions = response;
     });
   };
