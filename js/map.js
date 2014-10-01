@@ -12,7 +12,7 @@ function Opendisclosure() {
   this.default_type = 'primary';
   this.default_candidate = 'Nguyen';
   this.default_deadline = '2014-08-01';
-  this.number_of_shapefiles = 0;
+  this.number_of_shapefiles = 13;
   this.map_options = {
     zoom: 11,
     // google.maps.LatLng( LATITUDE, LONGITUDE ),
