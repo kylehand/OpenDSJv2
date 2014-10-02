@@ -73,6 +73,9 @@ newColors <- ifelse(primaryColorBucket==1, color[1],
 primaryCandidates[5] <- newColors
 colnames(primaryCandidates)[5] <-'color'
 
+primaryCandidates$TDate <- max(primaryCandidates$TDate)
+
+#primaryCandidates$Tdate <- cutOffDate
 
 
 #For Nguyen
@@ -114,7 +117,12 @@ herrera <- herrera[ , c(5, 6, 2, 1, 3, 4)] #Reorder
 #################### Then, for the runoff ####################
 
 runOffCandidates <- aggregate(Amt1 ~ Zip + ID + TDate, 
-                               data = mayors[(mayors$TDate > cutOffDate),], FUN = sum)
+                               data = mayors, FUN = sum)
+
+#runOffCandidates <- aggregate(Amt1 ~ Zip + ID + TDate, 
+#                              data = mayors[(mayors$TDate > cutOffDate),], FUN = sum)
+
+
 
 primaryColorBucket <- numeric()
 primaryColorBucket <- as.numeric(cut2(runOffCandidates$Amt1, g = 7))
@@ -134,7 +142,7 @@ newColors <- ifelse(primaryColorBucket==1, color[1],
 runOffCandidates[5] <- newColors
 colnames(runOffCandidates)[5] <-'color'
 
-
+runOffCandidates$TDate <- max(runOffCandidates$TDate)
 
 
 #For Liccardo
