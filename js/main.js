@@ -64,7 +64,7 @@ $(document).ready(function () {
 // This code will show and hide the iframes
 // Primaries
     $('.liccardo-pri-btn').click(function() {
-        map.renderContributions('primary','liccardo', '2014-08-01');
+        map.renderContributions('primary','liccardo', '2014-06-05');
         var name = 'Liccardo';
         var total = '1.2m';
         var contrib = '3.2k';
@@ -76,7 +76,7 @@ $(document).ready(function () {
     });
 
     $('.cortese-pri-btn').click(function() {
-        map.renderContributions('primary','cortese', '2014-08-01');
+        map.renderContributions('primary','cortese', '2014-06-05');
         var name = 'Cortese';
         var total = '930k';
         var contrib = '3.2k';
@@ -88,7 +88,7 @@ $(document).ready(function () {
     });
 
     $('.nguyen-pri-btn').click(function() {
-        map.renderContributions('primary','nguyen', '2014-08-01');
+        map.renderContributions('primary','nguyen', '2014-06-05');
         var name = 'Nguyen';
         var total = '473k';
         var contrib = '1.7k';
@@ -100,7 +100,7 @@ $(document).ready(function () {
     });
 
     $('.oliverio-pri-btn').click(function() {
-        map.renderContributions('primary','oliverio', '2014-08-01');
+        map.renderContributions('primary','oliverio', '2014-06-05');
         var name = 'Oliverio';
         var total = '161k';
         var contrib = '381';
@@ -112,7 +112,7 @@ $(document).ready(function () {
     });
 
     $('.herrera-pri-btn').click(function() {
-        map.renderContributions('primary','herrera', '2014-08-01');
+        map.renderContributions('primary','herrera', '2014-06-05');
         var name = 'Herrera';
         var total = '$115k';
         var contrib = '179';
@@ -125,7 +125,7 @@ $(document).ready(function () {
 
     //Run offs
     $('.liccardo-run-btn').click(function() {
-        map.renderContributions('runoff','liccardo', '2014-08-01');
+        map.renderContributions('runoff','liccardo', '2014-09-24');
         var name = 'Liccardo';
         var total = '1.24m';
         var contrib = '3.2k';
@@ -138,7 +138,7 @@ $(document).ready(function () {
     });
 
     $('.cortese-run-btn').click(function() {
-        map.renderContributions('runoff','cortese', '2014-08-01');
+        map.renderContributions('runoff','cortese', '2014-09-24');
         var name = 'Cortese';
         var total = '1.13m';
         var contrib = '4.1k';
