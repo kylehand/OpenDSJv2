@@ -30,9 +30,10 @@ function Opendisclosure() {
       position: google.maps.ControlPosition.TOP_RIGHT,
       position: google.maps.ControlPosition.RIGHT_BOTTOM
     },
+    scrollwheel: false,
     zoomControl: true,
     zoomControlOptions: {
-      style: google.maps.ZoomControlStyle.SMALL,
+      style: google.maps.ZoomControlStyle.LARGE,
       position: google.maps.ControlPosition.RIGHT_BOTTOM
     }
   };
