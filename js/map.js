@@ -23,7 +23,9 @@ function Opendisclosure() {
      * SATELLITE
      * TERRAIN
      */
-    mapTypeId: google.maps.MapTypeId.ROADMAP, panControl: true,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    streetViewControl: false,
+    panControl: true,
     panControlOptions: {
       position: google.maps.ControlPosition.TOP_RIGHT,
       position: google.maps.ControlPosition.RIGHT_BOTTOM
