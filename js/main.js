@@ -4,6 +4,8 @@ $(document).ready(function () {
         $(".primary-btn").addClass("active");
         $(".candidate-gp").css("display", "none");
         $("#primary").css("display", "block");
+        
+
     });
     $(".runoff-btn").click(function () {
         $("#tabs li").removeClass("active");
@@ -34,16 +36,12 @@ $(document).ready(function () {
         $( "h5" ).html(percent);
 
     });
-    /*$("#importance").click(function () {
-        $('#importancediv').css('display', 'block');
-        //$(this).next('#importancediv').stop().show('slide', {direction: 'down'}, 1400);
-    });*/
     // On start up show the About screen
     $("#blackout").css('display', 'block');
     $("#about").css('display', 'block');
     $("#blackout").click(function () {
         $("#blackout").css("display", "none");
-        $(".modal").css("display", "none");
+        //$(".modal").css("display", "none");
     });
     // $(".importance-btn").click(function () {
     //     $("#blackout").css("display", "block");
@@ -55,7 +53,7 @@ $(document).ready(function () {
     //     $(".modal").css("display", "none");
     //     $("#whats-a-pac-div").css("display", "block");
     // });
-    $(".about-btn").click(function () {
+    $(".directions-btn").click(function () {
         $("#blackout").css("display", "block");
         $(".modal").css("display", "none");
         $("#about-div").css("display", "block");

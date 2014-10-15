@@ -170,14 +170,23 @@ font-size: 1.1em;
     margin: 3px 0;
 }
 .modal {
-    background-color: #FFF;
+    background-color: transparent;
     position: relative;
-    width: 70%;
+    width: 55%;
     padding: 3%;
     margin: 10% auto;
-    border-radius: 5px;
     max-width: 800px;
     display: none;
+}
+
+.modal h1, .modal p, .modal li{
+    color: #FFF;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+ 
+.modal ol{
+    margin-left:  20%;
 }
 
 #more_info {
@@ -190,10 +199,11 @@ font-size: 1.1em;
 }
 #more_info #extra {
     width: 750px;
-    margin: 0 auto;
+    margin: -260px auto 0;
     padding: 0;
-    height: 37px;
+    height: 300px;
     position: relative;
+    overflow:hidden;
 }
 #more_info #extra li {
     display: block;
@@ -206,7 +216,7 @@ font-size: 1.1em;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     cursor:pointer;
-    margin: 0 10px 0 0;
+    margin: 260px 10px 0 0;
     height: 300px;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -221,7 +231,7 @@ font-size: 1.1em;
 }
 
 #more_info #extra li:hover {
-    margin-top: -260px;
+    margin-top: 0;
 }
 
 /*#importancediv, #nextStepsDiv, #actionDiv {
