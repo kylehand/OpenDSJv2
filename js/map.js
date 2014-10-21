@@ -23,14 +23,17 @@ function Opendisclosure() {
      * SATELLITE
      * TERRAIN
      */
-    mapTypeId: google.maps.MapTypeId.ROADMAP, panControl: true,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    streetViewControl: false,
+    panControl: true,
     panControlOptions: {
       position: google.maps.ControlPosition.TOP_RIGHT,
       position: google.maps.ControlPosition.RIGHT_BOTTOM
     },
+    scrollwheel: false,
     zoomControl: true,
     zoomControlOptions: {
-      style: google.maps.ZoomControlStyle.SMALL,
+      style: google.maps.ZoomControlStyle.LARGE,
       position: google.maps.ControlPosition.RIGHT_BOTTOM
     }
   };
@@ -104,7 +107,7 @@ function Opendisclosure() {
     type = type.toLowerCase();
     candidate = candidate.toLowerCase();
     deadline = deadline.toLowerCase();
-    console.log("Render Contributions for " + candidate + " / " + type + " / " + deadline);
+    //console.log("Render Contributions for " + candidate + " / " + type + " / " + deadline);
     // if polygons array already has data, go through and wipe it clean
     // from map
     if (this.polygons.length > 0) {
@@ -119,15 +122,14 @@ function Opendisclosure() {
       if (typeof this.contributions[type][candidate] != 'undefined') {
         if (typeof this.contributions[type][candidate][deadline] != 'undefined') {
           $.each(this.contributions[type][candidate][deadline], function (i, row) {
-            console.log(i + " " + row.color + " " + row.amount);
+            //console.log(i + " " + row.color + " " + row.amount);
             if (typeof map.zip_codes[i] != 'undefined') {
-              var color = '#feb24c';
               map.polygons.push(new google.maps.Polygon({
                 paths: map.zip_codes[i],
                 strokeColor: row.color,
                 strokeOpacity: 0.8,
                 strokeWeight: 1,
-                fillColor: color,
+                fillColor: row.color,
                 fillOpacity: .5,
                 clickable: true,
                 name: "Zip Code: " + i,
@@ -144,15 +146,15 @@ function Opendisclosure() {
     $.each(this.polygons, function(i, row) {
       row.setMap(map.map);
 
+      var original_color = row.fillColor;
+
       // add hovers/*
       google.maps.event.addListener(row, "mouseover", function(event) {
         this.setOptions({fillColor: "#00FF00"});
-
       });
       google.maps.event.addListener(row,"mouseout",function(){
-        this.setOptions({fillColor: this.shape_color});
+        this.setOptions({fillColor: original_color});
       });
-
       google.maps.event.addListener(row,"click",function(event){
         var contentString = '<div class="viewContribution"><b>'+this.name+'</b><br>' + this.total +
           //'Clicked location: <br>' + event.latLng.lat() + ',' + event.latLng.lng() +

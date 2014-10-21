@@ -234,6 +234,10 @@ font-size: 1.1em;
     margin-top: 0;
 }
 
+.viewContribution {
+    width: 175px;
+}
+
 /*#importancediv, #nextStepsDiv, #actionDiv {
     display:none;
 }*/
