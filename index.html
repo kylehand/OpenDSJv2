@@ -20,8 +20,8 @@
                 </div>
                 <div class="meta-menu right">
                     <ul>
-                        <li class="directions-btn"><a href="#">Directions</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a class="directions-btn" href="#">Directions</a></li>
+                        <li><a class="csj-btn" href="#">Code for San Jose</a></li>
                     </ul>
                 </div>
                 <div class="cf"></div>
@@ -31,11 +31,11 @@
             <section>
                 <div id="tabs">
                     <ul class="nav nav-tabs">
-                        <li class="primary-btn active">Primaries</li>
-                        <li class="runoff-btn">Run offs</li>
+                        <li class="primary-btn">Primaries</li>
+                        <li class="runoff-btn active">Run offs</li>
                         <li class="pac-btn last">PAC</li>
                     </ul>
-                    <div id="primary" class="candidate-gp">
+                    <div id="primary" class="candidate-gp" style="display:none;">
                         <ul>
                             <li>
                                 <a href="#" class="nguyen-pri-btn candidate">
@@ -65,7 +65,7 @@
                         </ul>
                         <div class="cf"></div>
                     </div>
-                    <div id="runoff" class="candidate-gp" style="display:none;">
+                    <div id="runoff" class="candidate-gp">
                         <ul>
                             <li>
                                 <a href="#" class="cortese-run-btn candidate">
@@ -98,20 +98,21 @@
                         <div class="cf"></div>
                     </div>
                     <div id="stats">
-                    <h2>Nguyen</h2>
+                    <h2>Cortese</h2>
                     <div>
-                        <h3>800k</h3>
+                        <h3>1.3m</h3>
                         <span>Total Raised</span>
                     </div>
                     <div>
-                        <h4>1.3k</h4>
+                        <h4>4.1k</h4>
                         <span>Contributors</span>
                     </div>
                     <div>
-                        <h5>5%</h5>
+                        <h5>49%</h5>
                         <span>% outside San Jose</span>
                     </div>
                     </div>
+                    <p style="font-size:10px;color:#FFF;text-align: center;">Updated on 10/20/14</p>
                 </div>
             </section>
         </div>
@@ -132,7 +133,11 @@
 <p>Our goal is to provide a new way to see campaign contribution data in an accessible and easy to understand format. We hope this visualization tool will be useful in simplifying campaign finance data and shed some light on the money that influences the campaigns of San Jose candidates. We feel that understanding this data keeps government accountable and empowers citizens to understand how campaign funds are raised and spent hereby illuminating the flow of money in politics.</p>
 <p>Our data comes from <a href="http://www.sanjoseca.gov/index.aspx?NID=451" target="_blank">e-filling data</a> provided by the <a href="http://www.sanjoseca.gov/" target="_blank">City of San Jose</a>. We want to make this data easier to find, see, and understand. Data is updated as the campaigns submit their latest data according to the filing deadlines set by the <a href="http://www.fppc.ca.gov/" target="_blank">California Fair Political Practices Commission (FPPC)</a>. </p>
 <p>All development on Open Disclosure San Jose is on <a href="https://github.com/codeforsanjose" target="_blank">Github</a>. We invite any questions or suggestions for improvement–just create an issue on Github. Thanks!</p> -->
-            </div>
+        </div>
+        <div class="modal" id="csj-div" style="display:none">
+            <h1>Title</h1>
+            <p>Text text text</p>
+        </div>
 <!--             <div class="modal" id="importance-div" style="display:none">
                 <div class="prev about-btn">&lt;</div>
                 <div class="next whats-a-pac-btn">&gt;</div>

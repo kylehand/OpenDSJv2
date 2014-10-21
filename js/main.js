@@ -4,7 +4,15 @@ $(document).ready(function () {
         $(".primary-btn").addClass("active");
         $(".candidate-gp").css("display", "none");
         $("#primary").css("display", "block");
-        
+        map.renderContributions('primary','cortese', '2014-06-05');
+        var name = 'Cortese';
+        var total = '930k';
+        var contrib = '3.2k';
+        var percent = '48%';
+        $( "h2" ).html(name);
+        $( "h3" ).html(total);
+        $( "h4" ).html(contrib);
+        $( "h5" ).html(percent);
 
     });
     $(".runoff-btn").click(function () {
@@ -12,10 +20,11 @@ $(document).ready(function () {
         $(".runoff-btn").addClass("active");
         $(".candidate-gp").css("display", "none");
         $("#runoff").css("display", "block");
+        map.renderContributions('runoff','cortese', '2014-09-24');
         var name = 'Cortese';
         var total = '1.13m';
-        var contrib = '4.0k';
-        var percent = '48.8%';
+        var contrib = '4.1k';
+        var percent = '49%';
         $( "h2" ).html(name);
         $( "h3" ).html(total);
         $( "h4" ).html(contrib);
@@ -26,10 +35,11 @@ $(document).ready(function () {
         $(".pac-btn").addClass("active");
         $(".candidate-gp").css("display", "none");
         $("#pac").css("display", "block");
-        var name = 'Cortese';
-        var total = '1.12m';
-        var contrib = '1.1k';
-        var percent = '15%';
+        map.renderContributions('pac','cortese', '2014-08-01');
+        var name = 'Pacs Supporting Cortese';
+        var total = 'x.m';
+        var contrib = 'x.k';
+        var percent = 'x%';
         $( "h2" ).html(name);
         $( "h3" ).html(total);
         $( "h4" ).html(contrib);
@@ -57,6 +67,11 @@ $(document).ready(function () {
         $("#blackout").css("display", "block");
         $(".modal").css("display", "none");
         $("#about-div").css("display", "block");
+    });
+    $(".csj-btn").click(function () {
+        $("#blackout").css("display", "block");
+        $(".modal").css("display", "none");
+        $("#csj-div").css("display", "block");
     });
 
 // This code will show and hide the iframes
