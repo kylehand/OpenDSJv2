@@ -73,6 +73,11 @@ $(document).ready(function () {
         $(".modal").css("display", "none");
         $("#csj-div").css("display", "block");
     });
+    $(".process-btn").click(function () {
+        $("#blackout").css("display", "block");
+        $(".modal").css("display", "none");
+        $("#process-div").css("display", "block");
+    });
 
 // This code will show and hide the iframes
 // Primaries
