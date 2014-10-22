@@ -1,6 +1,11 @@
 #Written by Lynna and Vivek
 #See OpenDSJ (v1) for details.
 
+#https://github.com/dilshod/xlsx2csv
+#cd ~/Github/OpenDSJv2/R
+#http://www.zamzar.com/uploadComplete.php?convertFile=xlsx&to=csv
+#python ~/anaconda/lib/python2.7/site-packages/xlsx2csv.py efile_newest_CSJ_2014.xlsx ~
+
 #You can run the below as is to get the comma separate txt file with the info you need
 
 #Choose the cut off date where the amt contributed is for the runoff (not for the primary).
@@ -9,9 +14,16 @@ cutOffDate <- as.Date(as.character("2014-06-05"))  #The date has to be input in 
 
 library(zipcode)
 library(plyr)
+library(Hmisc)
 
 A.Contributions.Table.1 <- read.csv("~/Dropbox/opendisclosure/City Data/2014_CSJ/A-Contributions-Table 1.csv", stringsAsFactors=FALSE)
 efile_newest_CSJ_2013_A_contributions <- read.csv("~/Dropbox/opendisclosure/City Data/2013_CSJ/efile_newest_CSJ_2013_A_contributions.csv", stringsAsFactors=FALSE)
+
+A.Contributions.Table.1 <- read.csv("~/Github/OpenDSJv2/R/hurtmedata/A-Contributions.csv", stringsAsFactors=FALSE)
+efile_newest_CSJ_2013_A_contributions <- read.csv("~/Github/OpenDSJv2/R/efile_newest_CSJ_2013_A_contributions.csv", stringsAsFactors=FALSE)
+
+
+setwd("~/Github/OpenDSJv2/R")
 
 #View(A.Contributions.Table.1)
 #View(efile_newest_CSJ_2013_A_contributions)
