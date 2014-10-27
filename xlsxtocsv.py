@@ -2,6 +2,9 @@
 """
 Created on Fri Oct 17 11:22:47 2014
 
+#THIS CODE DOESN'T RETAIN THE DATE HOW I MIGHT WANT THEM.
+GODDAMIT?
+
 @author: Vivek
 """
 
@@ -17,9 +20,9 @@ def main():
     os.chdir(path)
     
     #wb = xlrd.open_workbook('efile_CSJ_2014_oct_17.xlsx')
-    wb = xlrd.open_workbook('efile_CSJ_2014.xlsx')
+    #wb = xlrd.open_workbook('efile_CSJ_2014.xlsx')
     
-    #    wb = xlrd.open_workbook('efile_newest_CSJ_2014.xlsx')
+    wb = xlrd.open_workbook('efile_newest_CSJ_2014.xlsx')
     sh = wb.sheet_by_name('A-Contributions')
     your_csv_file = open('A-Contributions.csv', 'wb')
     wr = csv.writer(your_csv_file, quoting=csv.QUOTE_ALL)
