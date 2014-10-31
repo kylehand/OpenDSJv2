@@ -238,6 +238,26 @@ font-size: 1.1em;
     width: 175px;
 }
 
+.close-btn {
+color: #9E9E9E;
+border: 3px solid #9E9E9E;
+font-size: 26px;
+width: 20px;
+display: block;
+padding: 10px;
+text-align: center;
+border-radius: 100%;
+right: -50px;
+top: -50px;
+position: absolute;
+cursor: pointer;
+}
+
+.close-btn:hover{
+color: #FFF;
+border: 3px solid #FFF;
+}
+
 /*#importancediv, #nextStepsDiv, #actionDiv {
     display:none;
 }*/
