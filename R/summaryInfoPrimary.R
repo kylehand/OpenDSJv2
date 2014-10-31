@@ -11,6 +11,8 @@
 #Choose the cut off date where the amt contributed is for the runoff (not for the primary).
 #The contributions given strictly after this date is considered for the runoff 
 cutOffDate <- as.Date(as.character("2014-06-05"))  #The date has to be input in YYYY-MM-DD format
+options(java.parameters = "-Xmx1024m")
+
 
 library(zipcode)
 library(plyr)
@@ -19,10 +21,9 @@ library(Hmisc)
 #A.Contributions.Table.1 <- read.csv("~/Dropbox/opendisclosure/City Data/2014_CSJ/A-Contributions-Table 1.csv", stringsAsFactors=FALSE)
 #efile_newest_CSJ_2013_A_contributions <- read.csv("~/Dropbox/opendisclosure/City Data/2013_CSJ/efile_newest_CSJ_2013_A_contributions.csv", stringsAsFactors=FALSE)
 
-A.Contributions.Table.1 <- read.csv("~/Github/OpenDSJv2/R/hurtmedata/A-Contributions.csv", stringsAsFactors=FALSE)
+#A.Contributions.Table.1 <- read.csv("~/Github/OpenDSJv2/R/hurtmedata/A-Contributions.csv", stringsAsFactors=FALSE)
 efile_newest_CSJ_2013_A_contributions <- read.csv("~/Github/OpenDSJv2/R/efile_newest_CSJ_2013_A_contributions.csv", stringsAsFactors=FALSE)
 
-options(java.parameters = "-Xmx1024m")
 library(XLConnect)
 setwd('~/Github/OpenDSJv2/R/hurtmedata/')
 wb1 <- loadWorkbook("efile_newest_CSJ_2014.xlsx")
@@ -84,22 +85,30 @@ mayors <- rename(somemayors, c("combo.Filer_NamL"="Cands", "combo.Filer_ID"="ID"
 primaryCandidates <- aggregate(Amt1 ~ Zip + ID + TDate, 
                                data = mayors[(mayors$TDate <= cutOffDate),], FUN = sum)
 
-primaryColorBucket <- as.numeric(cut2(primaryCandidates$Amt1, g = 7))
+#primaryColorBucket <- as.numeric(cut2(primaryCandidates$Amt1, g = 7))
 
 #Color Subs
-color <- numeric()
-color[1:7] = c('#ffffb2', '#fed976', '#feb24c', '#fd8d3c','#fc4e2a', '#e31a1c',  '#b10026')
 
-newColors <- ifelse(primaryColorBucket==1, color[1],
-              ifelse(primaryColorBucket == 2, color[2], 
-                     ifelse(primaryColorBucket == 3, color[3], 
-                            ifelse(primaryColorBucket == 4, color[4], 
-                                   ifelse(primaryColorBucket == 5, color[5], 
-                                          ifelse(primaryColorBucket == 6, color[6], 
-                                                 color[7]))))))
 
-primaryCandidates[5] <- newColors
-colnames(primaryCandidates)[5] <-'color'
+giveitnewcolors <- function(bucket_me){
+  bucketed <- numeric()
+  bucketed <- as.numeric(cut2(bucket_me, g = 7))
+  color <- numeric()
+  color[1:7] = c('#ffffb2', '#fed976', '#feb24c', '#fd8d3c','#fc4e2a', '#e31a1c',  '#b10026')
+  newColors <- ifelse(bucketed==1, color[1],
+                      ifelse(bucketed == 2, color[2], 
+                             ifelse(bucketed == 3, color[3], 
+                                    ifelse(bucketed == 4, color[4], 
+                                           ifelse(bucketed == 5, color[5], 
+                                                  ifelse(bucketed == 6, color[6], 
+                                                         color[7]))))))  
+  return(newColors)
+}
+
+
+
+#primaryCandidates[5] <- newColors
+#colnames(primaryCandidates)[5] <-'color'
 
 primaryCandidates$TDate <- max(primaryCandidates$TDate)
 
@@ -108,6 +117,8 @@ primaryCandidates$TDate <- max(primaryCandidates$TDate)
 
 #For Nguyen
 nguyen <- primaryCandidates[primaryCandidates$ID == 1359805, ] 
+nguyen[5] <- giveitnewcolors(nguyen$Amt1)
+colnames(nguyen)[5] <-'color'
 nguyen$firstCol <- "primary"
 nguyen$secCol <- "Nguyen"
 nguyen$ID <- NULL
@@ -115,6 +126,8 @@ nguyen <- nguyen[ , c(5, 6, 2, 1, 3, 4)] #Reorder
 
 #For Liccardo
 liccardo <- primaryCandidates[primaryCandidates$ID == 1361139, ] 
+liccardo[5] <- giveitnewcolors(liccardo$Amt1)
+colnames(liccardo)[5] <-'color'
 liccardo$firstCol <- "primary"
 liccardo$secCol <- "Liccardo"
 liccardo$ID <- NULL
@@ -122,6 +135,8 @@ liccardo <- liccardo[ , c(5, 6, 2, 1, 3, 4)] #Reorder
 
 #For Oliverio
 oliverio <- primaryCandidates[primaryCandidates$ID == 1362117, ] 
+oliverio[5] <- giveitnewcolors(oliverio$Amt1)
+colnames(oliverio)[5] <-'color'
 oliverio$firstCol <- "primary"
 oliverio$secCol <- "Oliverio"
 oliverio$ID <- NULL
@@ -129,13 +144,17 @@ oliverio <- oliverio[ , c(5, 6, 2, 1, 3, 4)] #Reorder
 
 #For Cortese
 cortese <- primaryCandidates[primaryCandidates$ID == 1362187, ] 
+cortese[5] <- giveitnewcolors(cortese$Amt1)
+colnames(cortese)[5] <-'color'
 cortese$firstCol <- "primary"
 cortese$secCol <- "Cortese"
 cortese$ID <- NULL
 cortese <- cortese[ , c(5, 6, 2, 1, 3, 4)] #Reorder
 
 #For Herrera
-herrera <- primaryCandidates[primaryCandidates$ID == 1362068, ] 
+herrera <- primaryCandidates[primaryCandidates$ID == 1362068, ]
+herrera[5] <- giveitnewcolors(herrera$Amt1)
+colnames(herrera)[5] <-'color'
 herrera$firstCol <- "primary"
 herrera$secCol <- "Herrera"
 herrera$ID <- NULL
@@ -152,29 +171,23 @@ runOffCandidates <- aggregate(Amt1 ~ Zip + ID + TDate,
 
 
 
-primaryColorBucket <- numeric()
-primaryColorBucket <- as.numeric(cut2(runOffCandidates$Amt1, g = 7))
+#primaryColorBucket <- numeric()
+#primaryColorBucket <- as.numeric(cut2(runOffCandidates$Amt1, g = 7))
 
 #Color Subs
 #color <- numeric()
 #color[1:7] = c('#ffffb2', '#fed976', '#feb24c', '#fd8d3c','#fc4e2a', '#e31a1c',  '#b10026')
 
-newColors <- ifelse(primaryColorBucket==1, color[1],
-                    ifelse(primaryColorBucket == 2, color[2], 
-                           ifelse(primaryColorBucket == 3, color[3], 
-                                  ifelse(primaryColorBucket == 4, color[4], 
-                                         ifelse(primaryColorBucket == 5, color[5], 
-                                                ifelse(primaryColorBucket == 6, color[6], 
-                                                       color[7]))))))
-
-runOffCandidates[5] <- newColors
-colnames(runOffCandidates)[5] <-'color'
+#runOffCandidates[5] <- newColors
+#colnames(runOffCandidates)[5] <-'color'
 
 runOffCandidates$TDate <- max(runOffCandidates$TDate)
 
 
 #For Liccardo
 liccardoRunOff <- runOffCandidates[runOffCandidates$ID == 1361139, ] 
+liccardoRunOff[5] <- giveitnewcolors(liccardoRunOff$Amt1)
+colnames(liccardoRunOff)[5] <-'color'
 liccardoRunOff$firstCol <- "runoff"
 liccardoRunOff$secCol <- "Liccardo"
 liccardoRunOff$ID <- NULL
@@ -182,6 +195,8 @@ liccardoRunOff <- liccardoRunOff[ , c(5, 6, 2, 1, 3, 4)] #Reorder
 
 #For Cortese
 corteseRunOff <- runOffCandidates[runOffCandidates$ID == 1362187, ]
+corteseRunOff[5] <- giveitnewcolors(corteseRunOff$Amt1)
+colnames(corteseRunOff)[5] <-'color'
 corteseRunOff$firstCol <- "runoff"
 corteseRunOff$secCol <- "Cortese"
 corteseRunOff$ID <- NULL
