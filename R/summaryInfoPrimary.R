@@ -22,6 +22,16 @@ efile_newest_CSJ_2013_A_contributions <- read.csv("~/Dropbox/opendisclosure/City
 A.Contributions.Table.1 <- read.csv("~/Github/OpenDSJv2/R/hurtmedata/A-Contributions.csv", stringsAsFactors=FALSE)
 efile_newest_CSJ_2013_A_contributions <- read.csv("~/Github/OpenDSJv2/R/efile_newest_CSJ_2013_A_contributions.csv", stringsAsFactors=FALSE)
 
+options(java.parameters = "-Xmx1024m")
+#library(XLConnect)
+library(XLConnect)
+setwd('~/Github/OpenDSJv2/R/hurtmedata/')
+wb1 <- loadWorkbook("efile_newest_CSJ_2014.xlsx")
+A.contri <- readWorksheet(wb1, sheet = 1)
+
+
+
+
 
 setwd("~/Github/OpenDSJv2/R")
 
