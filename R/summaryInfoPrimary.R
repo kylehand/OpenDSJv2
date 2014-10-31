@@ -16,23 +16,19 @@ library(zipcode)
 library(plyr)
 library(Hmisc)
 
-A.Contributions.Table.1 <- read.csv("~/Dropbox/opendisclosure/City Data/2014_CSJ/A-Contributions-Table 1.csv", stringsAsFactors=FALSE)
-efile_newest_CSJ_2013_A_contributions <- read.csv("~/Dropbox/opendisclosure/City Data/2013_CSJ/efile_newest_CSJ_2013_A_contributions.csv", stringsAsFactors=FALSE)
+#A.Contributions.Table.1 <- read.csv("~/Dropbox/opendisclosure/City Data/2014_CSJ/A-Contributions-Table 1.csv", stringsAsFactors=FALSE)
+#efile_newest_CSJ_2013_A_contributions <- read.csv("~/Dropbox/opendisclosure/City Data/2013_CSJ/efile_newest_CSJ_2013_A_contributions.csv", stringsAsFactors=FALSE)
 
 A.Contributions.Table.1 <- read.csv("~/Github/OpenDSJv2/R/hurtmedata/A-Contributions.csv", stringsAsFactors=FALSE)
 efile_newest_CSJ_2013_A_contributions <- read.csv("~/Github/OpenDSJv2/R/efile_newest_CSJ_2013_A_contributions.csv", stringsAsFactors=FALSE)
 
 options(java.parameters = "-Xmx1024m")
-#library(XLConnect)
 library(XLConnect)
 setwd('~/Github/OpenDSJv2/R/hurtmedata/')
 wb1 <- loadWorkbook("efile_newest_CSJ_2014.xlsx")
 A.contri <- readWorksheet(wb1, sheet = 1)
 
 A.Contributions.Table.1 <- A.contri
-
-
-
 
 setwd("~/Github/OpenDSJv2/R")
 
@@ -185,7 +181,7 @@ liccardoRunOff$ID <- NULL
 liccardoRunOff <- liccardoRunOff[ , c(5, 6, 2, 1, 3, 4)] #Reorder
 
 #For Cortese
-corteseRunOff <- primaryCandidates[runOffCandidates$ID == 1362187, ] 
+corteseRunOff <- runOffCandidates[runOffCandidates$ID == 1362187, ]
 corteseRunOff$firstCol <- "runoff"
 corteseRunOff$secCol <- "Cortese"
 corteseRunOff$ID <- NULL
