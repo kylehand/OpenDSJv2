@@ -29,6 +29,7 @@ setwd('~/Github/OpenDSJv2/R/hurtmedata/')
 wb1 <- loadWorkbook("efile_newest_CSJ_2014.xlsx")
 A.contri <- readWorksheet(wb1, sheet = 1)
 
+A.Contributions.Table.1 <- A.contri
 
 
 
@@ -39,12 +40,28 @@ setwd("~/Github/OpenDSJv2/R")
 #View(efile_newest_CSJ_2013_A_contributions)
 mayor2013<-efile_newest_CSJ_2013_A_contributions
 mayor2014 <- A.Contributions.Table.1
+#cleaning dates
+#something is wrong with dates in df mayor2014
+
+
+
+mayor2013$Thru_Date <- as.Date(as.character(mayor2013$Thru_Date), "%m/%d/%Y")
+mayor2013$Rpt_Date <- as.Date(as.character(mayor2013$Rpt_Date), "%m/%d/%Y")
+mayor2013$From_Date <- as.Date(as.character(mayor2013$From_Date), "%m/%d/%Y")
+mayor2013$Tran_Date <- as.Date(as.character(mayor2013$Tran_Date), "%m/%d/%Y")
+
+
+mayor2014$Thru_Date <- as.Date(mayor2014$Thru_Date)
+mayor2014$Rpt_Date <- as.Date(mayor2014$Rpt_Date)
+mayor2014$From_Date <- as.Date(mayor2014$From_Date)
+mayor2014$Tran_Date <- as.Date(mayor2014$Tran_Date)
+
 
 combo <- data.frame(stringsAsFactors=FALSE)
 combo <- rbind(mayor2013, mayor2014)
 
 #cleaning zipcodes
-combo$Tran_Zip4
+#combo$Tran_Zip4
 combo$Tran_Zip4 <- as.character(combo$Tran_Zip4)
 
 #Need to take care of case where "95132-"
@@ -58,13 +75,6 @@ for(i in 1:nrow(combo)) {                 #takes a few mins
 }
 combo$Tran_Zip4 <- clean.zipcodes(combo$Tran_Zip4)
 
-#cleaning dates
-#something is wrong with dates in df mayor2014
-combo$Tran_Date <- as.Date(as.character(combo$Tran_Date), "%m/%d/%Y")
-
-combo$Rpt_Date <- as.Date(as.character(combo$Rpt_Date), "%m/%d/%Y")
-
-combo$From_Date <- as.Date(as.character(combo$From_Date), "%m/%d/%Y")
 
 somemayors <- data.frame(combo$Filer_NamL, combo$Filer_ID, combo$Rpt_Date, combo$From_Date, combo$Tran_Date, combo$Tran_ID, combo$Tran_NamL, combo$Tran_Zip4, combo$Tran_City, combo$Tran_State, combo$Tran_Amt1)
 
