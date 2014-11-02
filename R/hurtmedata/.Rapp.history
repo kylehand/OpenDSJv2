@@ -1,0 +1,1010 @@
+names(mayor2014)
+sumTranAmtByFilerID <- aggregate(Tran_Amt1 ~ Filer_ID + Tran_Date, data=mayor2014, FUN=sum)
+sumTranAmtByFilerID
+sumTranAmtByFilerID[(sumTranAmtByFilerID$Filer_ID == 1362278), c(1,2, 3)]
+mayor2014 <- read.csv("/Users/Lynna/Dropbox/opendisclosure/efile_CSJ_2014 2.csv")#
+str(mayor2014)#
+names(mayor2014)#
+## taking only the fields that we need#
+mayor2014 <- mayor2014[,c("Filer_ID", "Filer_NamL", "Tran_Date", "Tran_Amt1", "Tran_Amt2")]#
+## summary of "Amt2" by major#
+aggregate(Tran_Amt2 ~ Filer_NamL, data=mayor2014, FUN=sum)
+mayor2014$Tran_Date <- as.Date(as.character(mayor2014$Tran_Date), "%m/%d/%Y")#
+str(mayor2014$Tran_Date) ## checking#
+#
+totalamt2 <- function(nameData, Filer_ID){#
+	data <- read.csv(nameData, header = T)#
+	data <- data[,c(1, 2, 30, 31)]	## Taking only the Filer_ID, Filer_NamL, and Amt1 Amt2#
+	sumTranAmtByFilerID <- aggregate(Tran_Amt1 ~ Filer_ID + Tran_Date, data=data, FUN=sum)#
+	sumTranAmtByFilerID[(sumTranAmtByFilerID$Filer_ID == Filer_ID), c(1,2, 3)]#
+}
+totalamt2("/Users/Lynna/Dropbox/opendisclosure/efile_CSJ_2014 2.csv", 1362278)
+totalamt2(/Users/Lynna/Dropbox/opendisclosure/efile_CSJ_2014 2.csv, 1362278)
+mayor2014 <- read.csv("/Users/Lynna/Dropbox/opendisclosure/efile_CSJ_2014 2.csv")
+names(mayor2014)
+totalamt2 <- function(nameData, Filer_ID){#
+	data <- read.csv(nameData, header = T)#
+	data <- data[,c(1, 2, 28, 31)]	## Taking only the Filer_ID, Filer_NamL, and Amt1 Amt2#
+	sumTranAmtByFilerID <- aggregate(Tran_Amt2 ~ Filer_ID + Tran_Date, data=data, FUN=sum)#
+	sumTranAmtByFilerID[(sumTranAmtByFilerID$Filer_ID == Filer_ID), c(1,2, 3)]#
+}
+totalamt2("/Users/Lynna/Dropbox/opendisclosure/efile_CSJ_2014 2.csv", 1359560)
+totalamt2 <- function(nameData, Filer_ID){#
+	data <- read.csv(nameData, header = T)#
+	data <- data[,c(1, 2, 28, 31)]	## Taking only the Filer_ID, Filer_NamL, and Amt1 Amt2#
+	sumTranAmtByFilerID <- aggregate(Tran_Amt2 ~ Filer_ID + Tran_Date, data=data, FUN=sum)#
+    sumTranAmtByFilerID[(sumTranAmtByFilerID$Filer_ID == Filer_ID), c(1,2, 3)]#
+    within(sumTranAmtByFilerID, {#
+        cumsumAmt <- ave(Tran_Amt2, Tran_Date, FUN = cumsum)#
+    }#
+}
+totalamt2 <- function(nameData, Filer_ID){#
+	data <- read.csv(nameData, header = T)#
+	data <- data[,c(1, 2, 28, 31)]	## Taking only the Filer_ID, Filer_NamL, and Amt1 Amt2#
+	sumTranAmtByFilerID <- aggregate(Tran_Amt2 ~ Filer_ID + Tran_Date, data=data, FUN=sum)#
+    sumTranAmtByFilerID[(sumTranAmtByFilerID$Filer_ID == Filer_ID), c(1,2, 3)]#
+    within(sumTranAmtByFilerID, {#
+        cumsumAmt <- ave(Tran_Amt2, Tran_Date, FUN = cumsum)#
+    })#
+}
+totalamt2("/Users/Lynna/Dropbox/opendisclosure/efile_CSJ_2014 2.csv", 1359560)
+mayor2014 <- read.csv("/Users/Lynna/Dropbox/opendisclosure/efile_CSJ_2014 2.csv")
+data <- mayor2014
+data <- data[,c(1, 2, 28, 31)]
+sumTranAmtByFilerID <- aggregate(Tran_Amt2 ~ Filer_ID + Tran_Date, data=data, FUN=sum)
+sumTranAmtByFilerID[(sumTranAmtByFilerID$Filer_ID == Filer_ID), c(1,2, 3)]
+Filer_ID <- 1359560
+sumTranAmtByFilerID[(sumTranAmtByFilerID$Filer_ID == Filer_ID), c(1,2, 3)]
+sumTranAmtByFilerID
+sumTranAmtByFilerID <- sumTranAmtByFilerID[(sumTranAmtByFilerID$Filer_ID == Filer_ID), c(1,2, 3)]
+sumTranAmtByFilerID
+within(sumTranAmtByFilerID, {#
+        cumsumAmt <- ave(Tran_Amt2, Tran_Date, FUN = cumsum)#
+    })
+within(sumTranAmtByFilerID, {#
+        cumsumAmt <- ave(sumTranAmtByFilerID$Tran_Amt2, sumTranAmtByFilerID$Tran_Date, FUN = cumsum)#
+    })
+sumTranAmtByFilerID
+names(sumTranAmtByFilerID)
+within(sumTranAmtByFilerID, {#
+        cumsumAmt <- ave(Tran_Amt2, Tran_Date, FUN = cumsum)#
+    })
+within(sumTranAmtByFilerID, {#
+        cumsumAmt <- ave(Tran_Amt2, Tran_Date,Tran_Date, FUN = cumsum)#
+    })
+within(sumTranAmtByFilerID, {#
+        cumsumAmt <- ave(Tran_Amt2, Filer_ID,Tran_Date, FUN = cumsum)#
+    })
+within(sumTranAmtByFilerID, {#
+        cumsumAmt <- ave(Tran_Amt2, FUN = cumsum)#
+    })
+totalamt2 <- function(nameData, Filer_ID){#
+	data <- read.csv(nameData, header = T)#
+	data <- data[,c(1, 2, 28, 31)]	## Taking only the Filer_ID, Filer_NamL, and Amt1 Amt2#
+	sumTranAmtByFilerID <- aggregate(Tran_Amt2 ~ Filer_ID + Tran_Date, data=data, FUN=sum)#
+    sumTranAmtByFilerID <- sumTranAmtByFilerID[(sumTranAmtByFilerID$Filer_ID == Filer_ID), c(1,2, 3)]#
+    within(sumTranAmtByFilerID, {#
+        cumsumAmt <- ave(Tran_Amt2, FUN = cumsum)#
+    })#
+}
+totalamt2("/Users/Lynna/Dropbox/opendisclosure/efile_CSJ_2014 2.csv", 1359560)
+totalamt2("/Users/Lynna/Dropbox/opendisclosure/efile_CSJ_2014 2.csv", 1362278)
+getwd()
+A.Contributions.Table.1 <- read.csv("~/Dropbox/opendisclosure/City Data/efile_CSJ_2014 2/A-Contributions-Table 1.csv")#
+efile_newest_CSJ_2013_A_contributions <- read.csv("~/Dropbox/opendisclosure/City Data/2013_CSJ/efile_newest_CSJ_2013_A_contributions.csv")
+mayor2013 <- efile_newest_CSJ_2013_A_contributions#
+mayor2014 <- A.Contributions.Table.1
+str(mayors)
+combo <- data.frame(stringAsFactors=FALSE)
+combo <- rbind(mayor2013, mayor2014)
+str(mayor2013)
+str(mayor2014)
+A.Contributions.Table.1 <- read.csv("~/Dropbox/opendisclosure/City Data/efile_CSJ_2014 2/A-Contributions-Table 1.csv", stringAsFactors=FALSE)#
+efile_newest_CSJ_2013_A_contributions <- read.csv("~/Dropbox/opendisclosure/City Data/2013_CSJ/efile_newest_CSJ_2013_A_contributions.csv", stringAsFactors=FALSE)
+A.Contributions.Table.1 <- read.csv("~/Dropbox/opendisclosure/City Data/efile_CSJ_2014 2/A-Contributions-Table 1.csv", stringsAsFactors=FALSE)#
+efile_newest_CSJ_2013_A_contributions <- read.csv("~/Dropbox/opendisclosure/City Data/2013_CSJ/efile_newest_CSJ_2013_A_contributions.csv", stringsAsFactors=FALSE)
+combo <- data.frame(stringsAsFactors=FALSE)
+combo <- rbind(mayor2013, mayor2014)
+mayor2013 <- efile_newest_CSJ_2013_A_contributions#
+mayor2014 <- A.Contributions.Table.1
+combo <- data.frame(stringsAsFactors=FALSE)
+combo <- rbind(mayor2013, mayor2014)
+str(combo)
+str(combo$Tran_City)
+combo$Tran_City <-as.factor(tolower(combo$Tran_City))
+str(combo$Tran_City)
+combo$Tran_City
+levels(combo$Tran_City)
+str(combo)
+levels(combo$Tran_City) <- sub("^san joe$", "san jose", levels(combo$Tran_City))
+levels(combo$Tran_City)
+levels(combo$Tran_City) <- sub("^san josr", "san jose", levels(combo$Tran_City))
+levels(combo$Tran_City)
+levels(combo$Tran_City) <- sub("^san  jose", "san jose", levels(combo$Tran_City))
+levels(combo$Tran_City) <- sub("^sj", "san jose", levels(combo$Tran_City))
+levels(combo$Tran_City)
+str(combo$Tran_Zip4)
+combo$Tran_Zip4 <- as.factor(combo$Tran_Zip4)
+str(combo$Tran_Zip4)
+levels(combo$Tran_Zip4)
+12 + x - 6
+17 = 12 + x -6
+17 + 6 - 12
+x <- 1:4#
+p <- x/sum(x)#
+temp <- rbind(x, p)#
+rownames(temp) <- c("X", "Prob")#
+temp
+temp$ex <- X(Prob)
+temp$ex <- temp$X(temp$Prob)
+temp$ex <- temp$X*(temp$Prob)
+1*(.1) + 2*(.2) + 3*(.3) + 4*(.4)
+(.9*.8) / (.9*.8) + (.1*.2)
+(.9*.8) + (.1*.2)
+(.9*.8) / 0.74
+(.9*.8) / ((.9*.8) + (.1*.2))
+(.9*.8) / ((.9*.8) + (.3*.2))
+round(pbinom(2,size=4,prob=0.5,lower.tail=FALSE),2)#
+pbinom (3,size=4,prob = 0.5)
+n1 <- n2 <- 9#
+x1 <- -3  ##treated#
+x2 <- 1  ##placebo#
+s1 <- 1.5  ##treated#
+s2 <- 1.8  ##placebo#
+spsq <- ( (n1 - 1) * s1^2 + (n2 - 1) * s2^2) / (n1 + n2 - 2)#
+t=(x1-x2)/(spsq*sqrt(1/n1 + 1/n2))#
+2*pt(t,n1+n2-2)
+round(qnorm(0.95, mean=1100, sd=75))
+a <- c(140, 138, 150, 148, 135)#
+b <- c(132, 135, 151, 146, 130)#
+t.test(a, b, alternative = "two.sided", paired = T)
+n <- (qnorm(.95) - qnorm(.2)) ^ 2 * .04 ^ 2 / .01^2
+n <- (qnorm(.95) - qnorm(.1)) ^ 2 * .04 ^ 2 / .01^2
+n
+Take form D-Expenditure #
+getwd()#
+D.Expenditure.Table.2014 <- read.csv("~/Dropbox/opendisclosure/City Data/2014_CSJ/scheduleD_expenditure.csv",#
+stringsAsFactors=FALSE)#
+#
+#There is money going to help/or not help a candidate#
+#Cand_NamL = Candidate's name#
+#
+names(D.Expenditure.Table.2014)#
+#interested in Sup_Opp_Cd & Candidate's name & Amount#
+#
+col_Amt <- which(colnames(D.Expenditure.Table.2014)=="Amount")  ##"ID" is the name of the column which can be changed#
+col_Name <- which(colnames(D.Expenditure.Table.2014)=="Cand_NamL") ##"TDate" is the name of the Transfer Date column#
+col_Sup <- which(colnames(D.Expenditure.Table.2014)=="Sup_Opp_Cd")  ##"Amt1" is the transfer amount that we are interested in#
+#
+data <- D.Expenditure.Table.2014[ , c(col_Amt, col_Name, col_Sup)]#
+#
+str(data)#
+#we  need to turn Candidate's Name and Support Vs. Oppose variables as factor variables#
+data$Cand_NamL <- as.factor(tolower(data$Cand_NamL))#
+#
+data$Sup_Opp_Cd <- as.factor(data$Sup_Opp_Cd)#
+#
+str(data) #check#
+#
+summary <- function(candidate){#
+  summarySupOpp <- aggregate(data$Amount, by=list(data$Cand_NamL, data$Sup_Opp_Cd), FUN=sum)#
+  summarySupOpp <- summarySupOpp[(summarySupOpp$Group.1 == candidate), c(1, 2, 3)]#
+  summarySupOpp#
+}
+summary("sam liccardo")
+summary("dave cortese")
+levels(data$Cand_NamL)
+summary(xavier campos)
+summary("xavier campos")
+Take form D-Expenditure #
+getwd()#
+D.Expenditure.Table.2014 <- read.csv("~/Dropbox/opendisclosure/City Data/2014_CSJ/scheduleD_expenditure.csv",#
+stringsAsFactors=FALSE)#
+#
+#There is money going to help/or not help a candidate#
+#Cand_NamL = Candidate's name#
+#
+names(D.Expenditure.Table.2014)#
+#interested in Sup_Opp_Cd & Candidate's name & Amount#
+#
+col_Amt <- which(colnames(D.Expenditure.Table.2014)=="Amount")  ##"ID" is the name of the column which can be changed#
+col_Name <- which(colnames(D.Expenditure.Table.2014)=="Cand_NamL") ##"TDate" is the name of the Transfer Date column#
+col_Sup <- which(colnames(D.Expenditure.Table.2014)=="Sup_Opp_Cd")  ##"Amt1" is the transfer amount that we are interested in#
+#
+data <- D.Expenditure.Table.2014[ , c(col_Amt, col_Name, col_Sup)]#
+#
+str(data)#
+#we  need to turn Candidate's Name and Support Vs. Oppose variables as factor variables#
+data$Cand_NamL <- as.factor(tolower(data$Cand_NamL))#
+#
+data$Sup_Opp_Cd <- as.factor(data$Sup_Opp_Cd)#
+#
+str(data) #check#
+#
+summary <- function(candidate){#
+  summarySupOpp <- aggregate(data$Amount, by=list(data$Cand_NamL, data$Sup_Opp_Cd), FUN=sum)#
+  summarySupOpp <- summarySupOpp[(summarySupOpp$Group.1 == candidate), c(1, 2, 3)]#
+  summarySupOpp#
+}#
+#
+summary("sam liccardo")#
+#sam liccardo has $246,068 that went to support him#
+#
+summary("dave cortese")#
+#dave cortese has $59,905 that went to campaign against him#
+#and $44,122 that went to support him
+names(data)
+col_Amt <- which(colnames(D.Expenditure.Table.2014)=="Amount")#
+col_Name <- which(colnames(D.Expenditure.Table.2014)=="Cand_NamL")#
+col_Sup <- which(colnames(D.Expenditure.Table.2014)=="Sup_Opp_Cd")#
+col_Payee <- which(colnames(D.Expenditure.Table.2014)=="Payee_NamL")  ##Payee Name is the name of group or person giving money to oppose or support a candidate#
+dataPayee <- D.Expenditure.Table.2014[ , c(col_Amt, col_Name, col_Sup, col_Payee)]#
+#
+str(dataPayee)#
+#we need to turn Candidate's Name and Support Vs. Oppose variables as factor variables#
+dataPayee$Cand_NamL <- as.factor(tolower(dataPayee$Cand_NamL))#
+dataPayee$Cand_NamL <- as.factor(tolower(dataPayee$Payee_NamL))#
+#
+dataPayee$Sup_Opp_Cd <- as.factor(dataPayee$Sup_Opp_Cd)#
+#
+str(dataPayee) #check#
+summaryPayee <- sort aggregate(dataPayee$Amount, by=list(dataPayee$Payee_NamL, dataPayee$Cand_NamL, dataPayee$Sup_Opp_Cd), FUN=sum)#
+summaryPayee <- summaryPayee[order(-Amount), ]
+summaryPayee <- aggregate(dataPayee$Amount, by=list(dataPayee$Payee_NamL, dataPayee$Cand_NamL, dataPayee$Sup_Opp_Cd), FUN=sum)
+summaryPayee <- summaryPayee[order(-Amount), ]
+summaryPayee <- summaryPayee[order(-summaryPayee$Amount), ]
+summaryPayee
+head(summaryPayee)
+names(summaryPayee)
+summaryPayee <- rename(summaryPayee, c("Group.1" = "Payee", "Group.2" = "Candidate", "Group.3" = "OppseSupport", "x" = "Amount" ))
+library(plyr)
+summaryPayee <- rename(summaryPayee, c("Group.1" = "Payee", "Group.2" = "Candidate", "Group.3" = "OppseSupport", "x" = "Amount" ))
+summaryPayee <- summaryPayee[order(-summaryPayee$Amount), ]
+head(summaryPayee, 5) #to see top 5
+col_Amt <- which(colnames(D.Expenditure.Table.2014)=="Amount")#
+col_Name <- which(colnames(D.Expenditure.Table.2014)=="Cand_NamL")#
+col_Sup <- which(colnames(D.Expenditure.Table.2014)=="Sup_Opp_Cd")#
+col_Payee <- which(colnames(D.Expenditure.Table.2014)=="Payee_NamL")  ##Payee Name is the name of group or person giving money to oppose or support a candidate#
+dataPayee <- D.Expenditure.Table.2014[ , c(col_Amt, col_Name, col_Sup, col_Payee)]#
+#
+str(dataPayee)#
+#we need to turn Candidate's Name and Support Vs. Oppose variables as factor variables#
+dataPayee$Cand_NamL <- as.factor(tolower(dataPayee$Cand_NamL))#
+dataPayee$Payee_NamL <- as.factor(tolower(dataPayee$Payee_NamL))#
+#
+dataPayee$Sup_Opp_Cd <- as.factor(dataPayee$Sup_Opp_Cd)#
+#
+str(dataPayee) #check#
+summaryPayee <- aggregate(dataPayee$Amount, by=list(dataPayee$Payee_NamL, dataPayee$Cand_NamL, dataPayee$Sup_Opp_Cd), FUN=sum)#
+summaryPayee <- rename(summaryPayee, c("Group.1" = "Payee", "Group.2" = "Candidate", "Group.3" = "OppseSupport", "x" = "Amount" ))#
+summaryPayee <- summaryPayee[order(-summaryPayee$Amount), ]#
+#
+head(summaryPayee, 5) #to see top 5
+col_Amt <- which(colnames(D.Expenditure.Table.2014)=="Amount")#
+col_Name <- which(colnames(D.Expenditure.Table.2014)=="Cand_NamL")#
+col_Sup <- which(colnames(D.Expenditure.Table.2014)=="Sup_Opp_Cd")#
+col_Payee <- which(colnames(D.Expenditure.Table.2014)=="Payee_NamL")  ##Payee Name is the name of group or person giving money to oppose or support a candidate#
+dataPayee <- D.Expenditure.Table.2014[ , c(col_Amt, col_Name, col_Sup, col_Payee)]#
+#
+str(dataPayee)#
+#we need to turn Candidate's Name and Support Vs. Oppose variables as factor variables#
+dataPayee$Cand_NamL <- as.factor(tolower(dataPayee$Cand_NamL))#
+dataPayee$Payee_NamL <- as.factor(tolower(dataPayee$Payee_NamL))#
+#
+dataPayee$Sup_Opp_Cd <- as.factor(dataPayee$Sup_Opp_Cd)#
+#
+str(dataPayee) #check#
+summaryPayee <- aggregate(dataPayee$Amount, by=list(dataPayee$Payee_NamL, dataPayee$Cand_NamL, dataPayee$Sup_Opp_Cd), FUN=sum)#
+summaryPayee <- rename(summaryPayee, c("Group.1" = "Payee", "Group.2" = "Candidate", "Group.3" = "OppseSupport", "x" = "Amount" ))#
+summaryPayee <- summaryPayee[order(-summaryPayee$Amount), ]#
+#
+head(summaryPayee, 10) #to see top 5
+head(summaryPayee, 10)
+write.csv(top10Payee, "top10Payee.csv")
+top10Payee <- head(summaryPayee, 10) #to see top 10
+write.csv(top10Payee, "top10Payee.csv")
+getwd()
+setwd(~/Dropbox/opendisclosure/)
+setwd(~/Dropbox/opendisclosure)
+setwd(/Dropbox/opendisclosure)
+setwd(~/Dropbox/opendisclosure)
+col_Amt <- which(colnames(D.Expenditure.Table.2014)=="Amount")#
+col_Name <- which(colnames(D.Expenditure.Table.2014)=="Cand_NamL")#
+col_Sup <- which(colnames(D.Expenditure.Table.2014)=="Sup_Opp_Cd")#
+col_Filer <- which(colnames(D.Expenditure.Table.2014)=="Filer_NamL")  ##Payee Name is the name of group or person giving money to oppose or support a candidate#
+dataFiler <- D.Expenditure.Table.2014[ , c(col_Amt, col_Name, col_Sup, col_Filer)]#
+#
+str(dataFiler)#
+#we need to turn Candidate's Name and Support Vs. Oppose variables as factor variables#
+dataFiler$Cand_NamL <- as.factor(tolower(dataFiler$Cand_NamL))#
+dataFiler$Filer_NamL <- as.factor(tolower(dataFiler$Filer_NamL))#
+#
+dataFiler$Sup_Opp_Cd <- as.factor(dataFiler$Sup_Opp_Cd)#
+#
+str(dataFiler) #check#
+summaryFiler <- aggregate(dataFiler$Amount, by=list(dataFiler$Filer_NamL, dataFiler$Cand_NamL, dataFiler$Sup_Opp_Cd), FUN=sum)#
+summaryFiler <- rename(summaryFiler, c("Group.1" = "Payee", "Group.2" = "Candidate", "Group.3" = "OppseSupport", "x" = "Amount" ))#
+summaryFiler <- summaryFiler[order(-summaryFiler$Amount), ]#
+#
+top10Filer <- head(summaryFiler, 10) #to see top 10#
+#
+top10Filer#
+#
+write.csv(top10Filer, "top10Payee.csv")
+top10Filer
+col_Amt <- which(colnames(D.Expenditure.Table.2014)=="Amount")#
+col_Name <- which(colnames(D.Expenditure.Table.2014)=="Cand_NamL")#
+col_Sup <- which(colnames(D.Expenditure.Table.2014)=="Sup_Opp_Cd")#
+col_Filer <- which(colnames(D.Expenditure.Table.2014)=="Filer_NamL")  ##Payee Name is the name of group or person giving money to oppose or support a candidate#
+dataFiler <- D.Expenditure.Table.2014[ , c(col_Amt, col_Name, col_Sup, col_Filer)]#
+#
+str(dataFiler)#
+#we need to turn Candidate's Name and Support Vs. Oppose variables as factor variables#
+dataFiler$Cand_NamL <- as.factor(tolower(dataFiler$Cand_NamL))#
+dataFiler$Filer_NamL <- as.factor(tolower(dataFiler$Filer_NamL))#
+#
+dataFiler$Sup_Opp_Cd <- as.factor(dataFiler$Sup_Opp_Cd)#
+#
+str(dataFiler) #check#
+summaryFiler <- aggregate(dataFiler$Amount, by=list(dataFiler$Filer_NamL, dataFiler$Cand_NamL, dataFiler$Sup_Opp_Cd), FUN=sum)#
+summaryFiler <- rename(summaryFiler, c("Group.1" = "Filer", "Group.2" = "Candidate", "Group.3" = "OppseSupport", "x" = "Amount" ))#
+summaryFiler <- summaryFiler[order(-summaryFiler$Amount), ]#
+#
+top10Filer <- head(summaryFiler, 10) #to see top 10#
+#
+top10Filer#
+#
+write.csv(top10Filer, "top10Filer.csv")
+1.625^(1/6)
+1.05^6
+1.05^7
+1.4071*8000
+R.version.string
+install.packages("swirl")
+library(swirl)
+swirl()
+bye()
+swirl()
+plot(child ~ parent, galton)
+plot(jitter(child,4) ~#
+| parent,galton)
+plot(jitter(child,4) ~parent,galton)
+regrline <- lm(child ~ parent, galton)
+abline(regrline, lwd=3, col='red')
+summary(regrline)
+fit <- lm(child ~ parent, galton)
+summary(fit)
+mean(fit$residuals)
+cov(fit$residuals, galton$parent)
+ols.ic <- fit$coef
+ols.ic <- fit$coef[1]
+ols.ic <- fit$coef[2]
+ols.slope <- fit$coef[2]
+Here are the vectors of variations or tweaks#
+sltweak <- c(.01, .02, .03, -.01, -.02, -.03) #one for the slope#
+ictweak <- c(.1, .2, .3, -.1, -.2, -.3)  #one for the intercept#
+lhs <- numeric()#
+rhs <- numeric()#
+#left side of eqn is the sum of squares of residuals of the tweaked regression line#
+for (n in 1:6) lhs[n] <- sqe(ols.slope+sltweak[n],ols.ic+ictweak[n])#
+#right side of eqn is the sum of squares of original residuals + sum of squares of two tweaks#
+for (n in 1:6) rhs[n] <- sqe(ols.slope,ols.ic) + sum(est(sltweak[n],ictweak[n])^2)
+lhs-rhs
+all.equal
+all.equal(lhs,rhs)
+varChild <- var(child)
+varChild <- var(galton$child)
+varRes <- var(fit$residuals)
+varEst <- est(ols.slop)
+varEst <- intercept + est(ols.slop)
+varEst <- intercept + ols.slop*galtons$parent
+varEst <- ols.ic + ols.slop*galtons$parent
+varEst <- ols.ic + ols.slope*galtons$parent
+varEst <- ols.ic + ols.slope*galton$parent
+varEst <- var(est(ols.slope, ols.ic))
+all.equal(varChild, varRes+varEst)
+efit <- lm(accel ~#
+| mag+dist, attenu)
+efit <- lm(accel ~ mag+dist, attenu)
+mean
+mean(efit$residuals)
+cov(efit$residuals, attenu$mag)
+cov(efit$residuals, attenu$dist)
+cor(gpa_nor, gch_nor)
+l_nor <- lm()
+l_nor <- lm(child ~ parent)
+l_nor <- lm(child ~ parent, galton)
+l_nor <- lm(gch_nor ~ gpa_nor)
+library(zipcode)#
+library(plyr)#
+#
+A.Contributions.Table.1 <- read.csv("~/Dropbox/opendisclosure/City Data/2014_CSJ/A-Contributions-Table 1.csv", stringsAsFactors=FALSE)#
+efile_newest_CSJ_2013_A_contributions <- read.csv("~/Dropbox/opendisclosure/City Data/2013_CSJ/efile_newest_CSJ_2013_A_contributions.csv", stringsAsFactors=FALSE)#
+#
+#View(A.Contributions.Table.1)#
+#View(efile_newest_CSJ_2013_A_contributions)#
+mayor2013<-efile_newest_CSJ_2013_A_contributions#
+mayor2014 <- A.Contributions.Table.1#
+#
+combo <- data.frame(stringsAsFactors=FALSE)#
+combo <- rbind(mayor2013, mayor2014)#
+#
+#cleaning zipcodes#
+combo$Tran_Zip4#
+combo$Tran_Zip4 <- as.character(combo$Tran_Zip4)#
+#
+#Need to take care of case where "95132-"#
+#clean.zipcodes doesn't take care of cases with "-" at the end.  Instead, it returns NA's#
+#Though 95132-2110 is cleaned to 95132#
+for(i in 1:nrow(combo)) {                 #takes a few mins#
+  if(nchar(combo$Tran_Zip4[i]) == 6)    #looking for cases only when zipcode is 6 char long#
+  {#
+    combo$Tran_Zip4[i] <- gsub("-.*","",combo$Tran_Zip4[i])#
+  }#
+}#
+combo$Tran_Zip4 <- clean.zipcodes(combo$Tran_Zip4)#
+#
+#cleaning dates#
+#something is wrong with dates in df mayor2014#
+combo$Tran_Date <- as.Date(as.character(combo$Tran_Date), "%m/%d/%Y")#
+#
+combo$Rpt_Date <- as.Date(as.character(combo$Rpt_Date), "%m/%d/%Y")#
+#
+combo$From_Date <- as.Date(as.character(combo$From_Date), "%m/%d/%Y")#
+#
+somemayors <- data.frame(combo$Filer_NamL, combo$Filer_ID, combo$Rpt_Date, combo$From_Date, combo$Tran_Date, combo$Tran_ID, combo$Tran_NamL, combo$Tran_Zip4, combo$Tran_City, combo$Tran_State, combo$Tran_Amt1)#
+#
+str(somemayors)#
+mayors <- rename(somemayors, c("combo.Filer_NamL"="Cands", "combo.Filer_ID"="ID", "combo.Rpt_Date"="RDate", "combo.From_Date" = "FDate", "combo.Tran_Date"="TDate",  "combo.Tran_ID" = "TranID","combo.Tran_NamL" = "TranName",#
+                               "combo.Tran_Zip4"="Zip", "combo.Tran_City"="City", "combo.Tran_State"="State", "combo.Tran_Amt1"="Amt1")) #
+#
+allMayorsByZip <- aggregate(Amt1 ~ Zip + ID, data = mayors, FUN = sum)#
+#
+#For Nguyen#
+nguyen <- allMayorsByZip[allMayorsByZip$ID == 1359805, ] #
+nguyen$firstCol <- "primary"#
+nguyen$secCol <- "Nguyen"#
+nguyen$ID <- NULL#
+nguyen <- nguyen[ , c(3, 4, 1, 2)] #Reorder#
+#
+#For Liccardo#
+liccardo <- allMayorsByZip[allMayorsByZip$ID == 1361139, ] #
+liccardo$firstCol <- "primary"#
+liccardo$secCol <- "Liccardo"#
+liccardo$ID <- NULL#
+liccardo <- licarrdo[ , c(3, 4, 1, 2)] #Reorder#
+#
+#For Oliverio#
+oliverio <- allMayorsByZip[allMayorsByZip$ID == 1362117, ] #
+oliverio$firstCol <- "primary"#
+oliverio$secCol <- "Oliverio"#
+oliverio$ID <- NULL#
+oliverio <- oliverio[ , c(3, 4, 1, 2)] #Reorder#
+#
+#For Cortese#
+cortese <- allMayorsByZip[allMayorsByZip$ID == 1362187, ] #
+cortese$firstCol <- "primary"#
+cortese$secCol <- "Cortese"#
+cortese$ID <- NULL#
+cortese <- cortese[ , c(3, 4, 1, 2)] #Reorder#
+#
+#For Herrera#
+herrera <- allMayorsByZip[allMayorsByZip$ID == 1362068, ] #
+herrera$firstCol <- "primary"#
+herrera$secCol <- "Herrera"#
+herrera$ID <- NULL#
+herrera <- herrera[ , c(3, 4, 1, 2)] #Reorder#
+#
+summaryInfoPrimary <- rbind(nguyen, liccardo, oliverio, cortese, herrera)
+head(mayors)
+x <- as.POSIXct(mayors$TDate)
+yr <- strftime(x, "%Y")
+mo <- strftime(x, "%m")
+da <- strftime(x, "%d")
+yr
+amt <- runif(3)
+dd <- data.frame(yr, mo, da, amt)
+dd
+dd.agg <- aggregate(amt ~ da + mo + yr, dd, FUN = sum)
+dd.agg <- as.POSIXct(paste(dd.agg$yr, dd.agg$mo, dd.agg$da, "01", sep = "-"))
+head(dd.agg)
+dd.agg <- aggregate(amt ~ da + mo + yr, dd, FUN = sum)
+head(dd.agg)
+You can run the below as is to get the comma separate txt file with the info you need#
+#
+library(zipcode)#
+library(plyr)#
+#
+A.Contributions.Table.1 <- read.csv("~/Dropbox/opendisclosure/City Data/2014_CSJ/A-Contributions-Table 1.csv", stringsAsFactors=FALSE)#
+efile_newest_CSJ_2013_A_contributions <- read.csv("~/Dropbox/opendisclosure/City Data/2013_CSJ/efile_newest_CSJ_2013_A_contributions.csv", stringsAsFactors=FALSE)#
+#
+#View(A.Contributions.Table.1)#
+#View(efile_newest_CSJ_2013_A_contributions)#
+mayor2013<-efile_newest_CSJ_2013_A_contributions#
+mayor2014 <- A.Contributions.Table.1#
+#
+combo <- data.frame(stringsAsFactors=FALSE)#
+combo <- rbind(mayor2013, mayor2014)#
+#
+#cleaning zipcodes#
+combo$Tran_Zip4#
+combo$Tran_Zip4 <- as.character(combo$Tran_Zip4)#
+#
+#Need to take care of case where "95132-"#
+#clean.zipcodes doesn't take care of cases with "-" at the end.  Instead, it returns NA's#
+#Though 95132-2110 is cleaned to 95132#
+for(i in 1:nrow(combo)) {                 #takes a few mins#
+  if(nchar(combo$Tran_Zip4[i]) == 6)    #looking for cases only when zipcode is 6 char long#
+  {#
+    combo$Tran_Zip4[i] <- gsub("-.*","",combo$Tran_Zip4[i])#
+  }#
+}#
+combo$Tran_Zip4 <- clean.zipcodes(combo$Tran_Zip4)#
+#
+#cleaning dates#
+#something is wrong with dates in df mayor2014#
+combo$Tran_Date <- as.Date(as.character(combo$Tran_Date), "%m/%d/%Y")#
+#
+combo$Rpt_Date <- as.Date(as.character(combo$Rpt_Date), "%m/%d/%Y")#
+#
+combo$From_Date <- as.Date(as.character(combo$From_Date), "%m/%d/%Y")#
+#
+somemayors <- data.frame(combo$Filer_NamL, combo$Filer_ID, combo$Rpt_Date, combo$From_Date, combo$Tran_Date, combo$Tran_ID, combo$Tran_NamL, combo$Tran_Zip4, combo$Tran_City, combo$Tran_State, combo$Tran_Amt1)#
+#
+str(somemayors)#
+mayors <- rename(somemayors, c("combo.Filer_NamL"="Cands", "combo.Filer_ID"="ID", "combo.Rpt_Date"="RDate", "combo.From_Date" = "FDate", "combo.Tran_Date"="TDate",  "combo.Tran_ID" = "TranID","combo.Tran_NamL" = "TranName",#
+                               "combo.Tran_Zip4"="Zip", "combo.Tran_City"="City", "combo.Tran_State"="State", "combo.Tran_Amt1"="Amt1"))
+allMayorsByZip <- aggregate(Amt1 ~ Zip + ID + TDate, data = mayors, FUN = sum)
+head(allMayorsByZip)
+nguyen <- allMayorsByZip[allMayorsByZip$ID == 1359805, ] #
+nguyen$firstCol <- "primary"#
+nguyen$secCol <- "Nguyen"#
+nguyen$ID <- NULL
+head(nguyen)
+nguyen <- nguyen[ , c(4, 5, 2, 1, 3)] #Reorder
+head(nguyen)
+For Liccardo#
+liccardo <- allMayorsByZip[allMayorsByZip$ID == 1361139, ] #
+liccardo$firstCol <- "primary"#
+liccardo$secCol <- "Liccardo"#
+liccardo$ID <- NULL#
+liccardo <- licarrdo[ , c(4, 5, 2, 1, 3)] #Reorder
+liccardo <- liccardo[ , c(4, 5, 2, 1, 3)] #Reorder
+For Oliverio#
+oliverio <- allMayorsByZip[allMayorsByZip$ID == 1362117, ] #
+oliverio$firstCol <- "primary"#
+oliverio$secCol <- "Oliverio"#
+oliverio$ID <- NULL#
+oliverio <- oliverio[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+#For Cortese#
+cortese <- allMayorsByZip[allMayorsByZip$ID == 1362187, ] #
+cortese$firstCol <- "primary"#
+cortese$secCol <- "Cortese"#
+cortese$ID <- NULL#
+cortese <- cortese[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+#For Herrera#
+herrera <- allMayorsByZip[allMayorsByZip$ID == 1362068, ] #
+herrera$firstCol <- "primary"#
+herrera$secCol <- "Herrera"#
+herrera$ID <- NULL#
+herrera <- herrera[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+summaryInfoPrimary <- rbind(nguyen, liccardo, oliverio, cortese, herrera)
+head(summaryInfoPrimary)
+head(summaryInfoPrimary, 20)
+head(summaryInfoPrimary, 100)
+head(summaryInfoPrimary, 200)
+head(summaryInfoPrimary, 500)
+nrow(summaryInfoPrimary)
+head(summaryInfoPrimary, 400)
+head(summaryInfoPrimary, 1000)
+head(summaryInfoPrimary, 2000)
+cutOffDate <- as.Date(as.character("2013-06-05"))
+runOffMayors <- aggregate(Amt1 ~ Zip + ID + TDate, data = mayors[mayors$TDate >= cutOffDate], FUN = sum)
+runOffMayors <- aggregate(Amt1 ~ Zip + ID + TDate, data = mayors[(mayors$TDate >= cutOffDate),], FUN = sum)
+head(runOffMayors)
+You can run the below as is to get the comma separate txt file with the info you need#
+#
+#Choose the cut off date where the amt contributed is for the runoff (not for the primary).#
+#The contributions given strictly after this date is considered for the runoff #
+cutOffDate <- as.Date(as.character("2013-06-05"))  #The date has to be input in YYYY-MM-DD format#
+#
+library(zipcode)#
+library(plyr)#
+#
+A.Contributions.Table.1 <- read.csv("~/Dropbox/opendisclosure/City Data/2014_CSJ/A-Contributions-Table 1.csv", stringsAsFactors=FALSE)#
+efile_newest_CSJ_2013_A_contributions <- read.csv("~/Dropbox/opendisclosure/City Data/2013_CSJ/efile_newest_CSJ_2013_A_contributions.csv", stringsAsFactors=FALSE)#
+#
+#View(A.Contributions.Table.1)#
+#View(efile_newest_CSJ_2013_A_contributions)#
+mayor2013<-efile_newest_CSJ_2013_A_contributions#
+mayor2014 <- A.Contributions.Table.1#
+#
+combo <- data.frame(stringsAsFactors=FALSE)#
+combo <- rbind(mayor2013, mayor2014)#
+#
+#cleaning zipcodes#
+combo$Tran_Zip4#
+combo$Tran_Zip4 <- as.character(combo$Tran_Zip4)#
+#
+#Need to take care of case where "95132-"#
+#clean.zipcodes doesn't take care of cases with "-" at the end.  Instead, it returns NA's#
+#Though 95132-2110 is cleaned to 95132#
+for(i in 1:nrow(combo)) {                 #takes a few mins#
+  if(nchar(combo$Tran_Zip4[i]) == 6)    #looking for cases only when zipcode is 6 char long#
+  {#
+    combo$Tran_Zip4[i] <- gsub("-.*","",combo$Tran_Zip4[i])#
+  }#
+}#
+combo$Tran_Zip4 <- clean.zipcodes(combo$Tran_Zip4)#
+#
+#cleaning dates#
+#something is wrong with dates in df mayor2014#
+combo$Tran_Date <- as.Date(as.character(combo$Tran_Date), "%m/%d/%Y")#
+#
+combo$Rpt_Date <- as.Date(as.character(combo$Rpt_Date), "%m/%d/%Y")#
+#
+combo$From_Date <- as.Date(as.character(combo$From_Date), "%m/%d/%Y")#
+#
+somemayors <- data.frame(combo$Filer_NamL, combo$Filer_ID, combo$Rpt_Date, combo$From_Date, combo$Tran_Date, combo$Tran_ID, combo$Tran_NamL, combo$Tran_Zip4, combo$Tran_City, combo$Tran_State, combo$Tran_Amt1)#
+#
+str(somemayors)#
+mayors <- rename(somemayors, c("combo.Filer_NamL"="Cands", "combo.Filer_ID"="ID", "combo.Rpt_Date"="RDate", "combo.From_Date" = "FDate", "combo.Tran_Date"="TDate",  "combo.Tran_ID" = "TranID","combo.Tran_NamL" = "TranName",#
+                               "combo.Tran_Zip4"="Zip", "combo.Tran_City"="City", "combo.Tran_State"="State", "combo.Tran_Amt1"="Amt1")) #
+primaryCandidates <- aggregate(Amt1 ~ Zip + ID + TDate, #
+                               data = mayors[(mayors$TDate <= cutOffDate),], FUN = sum)#
+#
+#For Nguyen#
+nguyen <- primaryCandidates[primaryCandidates$ID == 1359805, ] #
+nguyen$firstCol <- "primary"#
+nguyen$secCol <- "Nguyen"#
+nguyen$ID <- NULL#
+nguyen <- nguyen[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+#For Liccardo#
+liccardo <- primaryCandidates[primaryCandidates$ID == 1361139, ] #
+liccardo$firstCol <- "primary"#
+liccardo$secCol <- "Liccardo"#
+liccardo$ID <- NULL#
+liccardo <- liccardo[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+#For Oliverio#
+oliverio <- primaryCandidates[primaryCandidates$ID == 1362117, ] #
+oliverio$firstCol <- "primary"#
+oliverio$secCol <- "Oliverio"#
+oliverio$ID <- NULL#
+oliverio <- oliverio[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+#For Cortese#
+cortese <- primaryCandidates[primaryCandidates$ID == 1362187, ] #
+cortese$firstCol <- "primary"#
+cortese$secCol <- "Cortese"#
+cortese$ID <- NULL#
+cortese <- cortese[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+#For Herrera#
+herrera <- primaryCandidates[primaryCandidates$ID == 1362068, ] #
+herrera$firstCol <- "primary"#
+herrera$secCol <- "Herrera"#
+herrera$ID <- NULL#
+herrera <- herrera[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+runOffCandidates <- aggregate(Amt1 ~ Zip + ID + TDate, #
+                               data = mayors[(mayors$TDate > cutOffDate),], FUN = sum)#
+#For Liccardo#
+liccardoRunOff <- runOffCandidates[primaryCandidates$ID == 1361139, ] #
+liccardoRunOff$firstCol <- "runoff"#
+liccardoRunOff$secCol <- "Liccardo"#
+liccardoRunOff$ID <- NULL#
+liccardoRunOff <- liccardoRunOff[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+#For Cortese#
+corteseRunOff <- primaryCandidates[primaryCandidates$ID == 1362187, ] #
+corteseRunOff$firstCol <- "runoff"#
+corteseRunOff$secCol <- "Cortese"#
+corteseRunOff$ID <- NULL#
+corteseRunOff <- corteseRunOff[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+summaryInfo <- rbind(nguyen, liccardo, oliverio, cortese, herrera, liccardoRunOff, corteseRunOff)#
+#
+write.table(summaryInfo, "summaryInfo.txt", quote=FALSE, sep="," , row.names=FALSE, col.names=FALSE)#
+#
+getwd() #find summaryInfo.txt
+nguyen
+primaryCandidates
+primaryCandidates <- aggregate(Amt1 ~ Zip + ID + TDate,
+data = mayors, FUN=sum)
+head(primaryCandidates, 1000)
+nguyen <- primaryCandidates[primaryCandidates$ID == 1359805, ]
+nguyen
+You can run the below as is to get the comma separate txt file with the info you need#
+#
+#Choose the cut off date where the amt contributed is for the runoff (not for the primary).#
+#The contributions given strictly after this date is considered for the runoff #
+cutOffDate <- as.Date(as.character("2014-06-05"))  #The date has to be input in YYYY-MM-DD format#
+#
+library(zipcode)#
+library(plyr)#
+#
+A.Contributions.Table.1 <- read.csv("~/Dropbox/opendisclosure/City Data/2014_CSJ/A-Contributions-Table 1.csv", stringsAsFactors=FALSE)#
+efile_newest_CSJ_2013_A_contributions <- read.csv("~/Dropbox/opendisclosure/City Data/2013_CSJ/efile_newest_CSJ_2013_A_contributions.csv", stringsAsFactors=FALSE)#
+#
+#View(A.Contributions.Table.1)#
+#View(efile_newest_CSJ_2013_A_contributions)#
+mayor2013<-efile_newest_CSJ_2013_A_contributions#
+mayor2014 <- A.Contributions.Table.1#
+#
+combo <- data.frame(stringsAsFactors=FALSE)#
+combo <- rbind(mayor2013, mayor2014)#
+#
+#cleaning zipcodes#
+combo$Tran_Zip4#
+combo$Tran_Zip4 <- as.character(combo$Tran_Zip4)#
+#
+#Need to take care of case where "95132-"#
+#clean.zipcodes doesn't take care of cases with "-" at the end.  Instead, it returns NA's#
+#Though 95132-2110 is cleaned to 95132#
+for(i in 1:nrow(combo)) {                 #takes a few mins#
+  if(nchar(combo$Tran_Zip4[i]) == 6)    #looking for cases only when zipcode is 6 char long#
+  {#
+    combo$Tran_Zip4[i] <- gsub("-.*","",combo$Tran_Zip4[i])#
+  }#
+}#
+combo$Tran_Zip4 <- clean.zipcodes(combo$Tran_Zip4)#
+#
+#cleaning dates#
+#something is wrong with dates in df mayor2014#
+combo$Tran_Date <- as.Date(as.character(combo$Tran_Date), "%m/%d/%Y")#
+#
+combo$Rpt_Date <- as.Date(as.character(combo$Rpt_Date), "%m/%d/%Y")#
+#
+combo$From_Date <- as.Date(as.character(combo$From_Date), "%m/%d/%Y")#
+#
+somemayors <- data.frame(combo$Filer_NamL, combo$Filer_ID, combo$Rpt_Date, combo$From_Date, combo$Tran_Date, combo$Tran_ID, combo$Tran_NamL, combo$Tran_Zip4, combo$Tran_City, combo$Tran_State, combo$Tran_Amt1)#
+#
+str(somemayors)#
+mayors <- rename(somemayors, c("combo.Filer_NamL"="Cands", "combo.Filer_ID"="ID", "combo.Rpt_Date"="RDate", "combo.From_Date" = "FDate", "combo.Tran_Date"="TDate",  "combo.Tran_ID" = "TranID","combo.Tran_NamL" = "TranName",#
+                               "combo.Tran_Zip4"="Zip", "combo.Tran_City"="City", "combo.Tran_State"="State", "combo.Tran_Amt1"="Amt1")) #
+primaryCandidates <- aggregate(Amt1 ~ Zip + ID + TDate, #
+                               data = mayors[(mayors$TDate <= cutOffDate),], FUN = sum)#
+#
+#For Nguyen#
+nguyen <- primaryCandidates[primaryCandidates$ID == 1359805, ] #
+nguyen$firstCol <- "primary"#
+nguyen$secCol <- "Nguyen"#
+nguyen$ID <- NULL#
+nguyen <- nguyen[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+#For Liccardo#
+liccardo <- primaryCandidates[primaryCandidates$ID == 1361139, ] #
+liccardo$firstCol <- "primary"#
+liccardo$secCol <- "Liccardo"#
+liccardo$ID <- NULL#
+liccardo <- liccardo[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+#For Oliverio#
+oliverio <- primaryCandidates[primaryCandidates$ID == 1362117, ] #
+oliverio$firstCol <- "primary"#
+oliverio$secCol <- "Oliverio"#
+oliverio$ID <- NULL#
+oliverio <- oliverio[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+#For Cortese#
+cortese <- primaryCandidates[primaryCandidates$ID == 1362187, ] #
+cortese$firstCol <- "primary"#
+cortese$secCol <- "Cortese"#
+cortese$ID <- NULL#
+cortese <- cortese[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+#For Herrera#
+herrera <- primaryCandidates[primaryCandidates$ID == 1362068, ] #
+herrera$firstCol <- "primary"#
+herrera$secCol <- "Herrera"#
+herrera$ID <- NULL#
+herrera <- herrera[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+runOffCandidates <- aggregate(Amt1 ~ Zip + ID + TDate, #
+                               data = mayors[(mayors$TDate > cutOffDate),], FUN = sum)#
+#For Liccardo#
+liccardoRunOff <- runOffCandidates[primaryCandidates$ID == 1361139, ] #
+liccardoRunOff$firstCol <- "runoff"#
+liccardoRunOff$secCol <- "Liccardo"#
+liccardoRunOff$ID <- NULL#
+liccardoRunOff <- liccardoRunOff[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+#For Cortese#
+corteseRunOff <- primaryCandidates[primaryCandidates$ID == 1362187, ] #
+corteseRunOff$firstCol <- "runoff"#
+corteseRunOff$secCol <- "Cortese"#
+corteseRunOff$ID <- NULL#
+corteseRunOff <- corteseRunOff[ , c(4, 5, 2, 1, 3)] #Reorder#
+#
+summaryInfo <- rbind(nguyen, liccardo, oliverio, cortese, herrera, liccardoRunOff, corteseRunOff)#
+#
+write.table(summaryInfo, "summaryInfo.txt", quote=FALSE, sep="," , row.names=FALSE, col.names=FALSE)
+getwd()
+liccardoRunOff
+runOffCandidates
+options(java.parameters = "-Xmx1024m")
+library(XLConnect)#
+setwd('~/Github/OpenDSJv2/R/hurtmedata/')
+wb1 <- loadWorkbook("efile_newest_CSJ_2014.xlsx")#
+A.contri <- readWorksheet(wb1, sheet = 1)#
+#
+A.Contributions.Table.1 <- A.contri
+library(zipcode)#
+library(plyr)#
+library(Hmisc)
+library(Hmisc)
+library(Hmisc)
+efile_newest_CSJ_2013_A_contributions <- read.csv("~/Github/OpenDSJv2/R/efile_newest_CSJ_2013_A_contributions.csv", stringsAsFactors=FALSE)
+mayor2013<-efile_newest_CSJ_2013_A_contributions#
+mayor2014 <- A.Contributions.Table.1
+mayor2013$Thru_Date <- as.Date(as.character(mayor2013$Thru_Date), "%m/%d/%Y")#
+mayor2013$Rpt_Date <- as.Date(as.character(mayor2013$Rpt_Date), "%m/%d/%Y")#
+mayor2013$From_Date <- as.Date(as.character(mayor2013$From_Date), "%m/%d/%Y")#
+mayor2013$Tran_Date <- as.Date(as.character(mayor2013$Tran_Date), "%m/%d/%Y")#
+mayor2014$Thru_Date <- as.Date(mayor2014$Thru_Date)#
+mayor2014$Rpt_Date <- as.Date(mayor2014$Rpt_Date)#
+mayor2014$From_Date <- as.Date(mayor2014$From_Date)#
+mayor2014$Tran_Date <- as.Date(mayor2014$Tran_Date)
+combo <- data.frame(stringsAsFactors=FALSE)#
+combo <- rbind(mayor2013, mayor2014)#
+#
+#cleaning zipcodes#
+#combo$Tran_Zip4#
+combo$Tran_Zip4 <- as.character(combo$Tran_Zip4)#
+#
+#Need to take care of case where "95132-"#
+#clean.zipcodes doesn't take care of cases with "-" at the end.  Instead, it returns NA's#
+#Though 95132-2110 is cleaned to 95132#
+for(i in 1:nrow(combo)) {                 #takes a few mins#
+  if(nchar(combo$Tran_Zip4[i]) == 6)    #looking for cases only when zipcode is 6 char long#
+  {#
+    combo$Tran_Zip4[i] <- gsub("-.*","",combo$Tran_Zip4[i])#
+  }#
+}#
+combo$Tran_Zip4 <- clean.zipcodes(combo$Tran_Zip4)
+somemayors <- data.frame(combo$Filer_NamL, combo$Filer_ID, combo$Rpt_Date, combo$From_Date, combo$Tran_Date, combo$Tran_ID, combo$Tran_NamL, combo$Tran_Zip4, combo$Tran_City, combo$Tran_State, combo$Tran_Amt1)#
+#
+str(somemayors)#
+mayors <- rename(somemayors, c("combo.Filer_NamL"="Cands", "combo.Filer_ID"="ID", "combo.Rpt_Date"="RDate", "combo.From_Date" = "FDate", "combo.Tran_Date"="TDate",  "combo.Tran_ID" = "TranID","combo.Tran_NamL" = "TranName",#
+                               "combo.Tran_Zip4"="Zip", "combo.Tran_City"="City", "combo.Tran_State"="State", "combo.Tran_Amt1"="Amt1"))
+For Nguyen#
+nguyen <- primaryCandidates[primaryCandidates$ID == 1359805, ] #
+nguyen$firstCol <- "primary"#
+nguyen$secCol <- "Nguyen"#
+nguyen$ID <- NULL#
+nguyen <- nguyen[ , c(5, 6, 2, 1, 3, 4)] #Reorder
+primaryCandidates <- aggregate(Amt1 ~ Zip + ID + TDate, #
+                               data = mayors[(mayors$TDate <= cutOffDate),], FUN = sum)#
+#
+primaryColorBucket <- as.numeric(cut2(primaryCandidates$Amt1, g = 7))#
+#
+#Color Subs#
+color <- numeric()#
+color[1:7] = c('#ffffb2', '#fed976', '#feb24c', '#fd8d3c','#fc4e2a', '#e31a1c',  '#b10026')#
+#
+newColors <- ifelse(primaryColorBucket==1, color[1],#
+              ifelse(primaryColorBucket == 2, color[2], #
+                     ifelse(primaryColorBucket == 3, color[3], #
+                            ifelse(primaryColorBucket == 4, color[4], #
+                                   ifelse(primaryColorBucket == 5, color[5], #
+                                          ifelse(primaryColorBucket == 6, color[6], #
+                                                 color[7]))))))#
+#
+primaryCandidates[5] <- newColors#
+colnames(primaryCandidates)[5] <-'color'#
+#
+primaryCandidates$TDate <- max(primaryCandidates$TDate)
+primaryCandidates <- aggregate(Amt1 ~ Zip + ID + TDate, #
+                               data = mayors[(mayors$TDate <= cutOffDate),], FUN = sum)
+cutOffDate <- as.Date(as.character("2014-06-05"))
+primaryCandidates <- aggregate(Amt1 ~ Zip + ID + TDate, #
+                               data = mayors[(mayors$TDate <= cutOffDate),], FUN = sum)#
+#
+primaryColorBucket <- as.numeric(cut2(primaryCandidates$Amt1, g = 7))#
+#
+#Color Subs#
+color <- numeric()#
+color[1:7] = c('#ffffb2', '#fed976', '#feb24c', '#fd8d3c','#fc4e2a', '#e31a1c',  '#b10026')#
+#
+newColors <- ifelse(primaryColorBucket==1, color[1],#
+              ifelse(primaryColorBucket == 2, color[2], #
+                     ifelse(primaryColorBucket == 3, color[3], #
+                            ifelse(primaryColorBucket == 4, color[4], #
+                                   ifelse(primaryColorBucket == 5, color[5], #
+                                          ifelse(primaryColorBucket == 6, color[6], #
+                                                 color[7]))))))#
+#
+primaryCandidates[5] <- newColors#
+colnames(primaryCandidates)[5] <-'color'#
+#
+primaryCandidates$TDate <- max(primaryCandidates$TDate)
+For Nguyen#
+nguyen <- primaryCandidates[primaryCandidates$ID == 1359805, ] #
+nguyen$firstCol <- "primary"#
+nguyen$secCol <- "Nguyen"#
+nguyen$ID <- NULL#
+nguyen <- nguyen[ , c(5, 6, 2, 1, 3, 4)] #Reorder#
+#
+#For Liccardo#
+liccardo <- primaryCandidates[primaryCandidates$ID == 1361139, ] #
+liccardo$firstCol <- "primary"#
+liccardo$secCol <- "Liccardo"#
+liccardo$ID <- NULL#
+liccardo <- liccardo[ , c(5, 6, 2, 1, 3, 4)] #Reorder#
+#
+#For Oliverio#
+oliverio <- primaryCandidates[primaryCandidates$ID == 1362117, ] #
+oliverio$firstCol <- "primary"#
+oliverio$secCol <- "Oliverio"#
+oliverio$ID <- NULL#
+oliverio <- oliverio[ , c(5, 6, 2, 1, 3, 4)] #Reorder#
+#
+#For Cortese#
+cortese <- primaryCandidates[primaryCandidates$ID == 1362187, ] #
+cortese$firstCol <- "primary"#
+cortese$secCol <- "Cortese"#
+cortese$ID <- NULL#
+cortese <- cortese[ , c(5, 6, 2, 1, 3, 4)] #Reorder#
+#
+#For Herrera#
+herrera <- primaryCandidates[primaryCandidates$ID == 1362068, ] #
+herrera$firstCol <- "primary"#
+herrera$secCol <- "Herrera"#
+herrera$ID <- NULL#
+herrera <- herrera[ , c(5, 6, 2, 1, 3, 4)] #Reorder
+runOffCandidates <- aggregate(Amt1 ~ Zip + ID + TDate, #
+                               data = mayors, FUN = sum)#
+#
+#runOffCandidates <- aggregate(Amt1 ~ Zip + ID + TDate, #
+#                              data = mayors[(mayors$TDate > cutOffDate),], FUN = sum)#
+primaryColorBucket <- numeric()#
+primaryColorBucket <- as.numeric(cut2(runOffCandidates$Amt1, g = 7))#
+#
+#Color Subs#
+#color <- numeric()#
+#color[1:7] = c('#ffffb2', '#fed976', '#feb24c', '#fd8d3c','#fc4e2a', '#e31a1c',  '#b10026')#
+#
+newColors <- ifelse(primaryColorBucket==1, color[1],#
+                    ifelse(primaryColorBucket == 2, color[2], #
+                           ifelse(primaryColorBucket == 3, color[3], #
+                                  ifelse(primaryColorBucket == 4, color[4], #
+                                         ifelse(primaryColorBucket == 5, color[5], #
+                                                ifelse(primaryColorBucket == 6, color[6], #
+                                                       color[7]))))))#
+#
+runOffCandidates[5] <- newColors#
+colnames(runOffCandidates)[5] <-'color'#
+#
+runOffCandidates$TDate <- max(runOffCandidates$TDate)#
+#For Liccardo#
+liccardoRunOff <- runOffCandidates[runOffCandidates$ID == 1361139, ] #
+liccardoRunOff$firstCol <- "runoff"#
+liccardoRunOff$secCol <- "Liccardo"#
+liccardoRunOff$ID <- NULL#
+liccardoRunOff <- liccardoRunOff[ , c(5, 6, 2, 1, 3, 4)] #Reorder
+For Cortese#
+corteseRunOff <- primaryCandidates[runOffCandidates$ID == 1362187, ] #
+corteseRunOff$firstCol <- "runoff"#
+corteseRunOff$secCol <- "Cortese"#
+corteseRunOff$ID <- NULL#
+corteseRunOff <- corteseRunOff[ , c(5, 6, 2, 1, 3, 4)] #Reorder
+corteseRunOff
+liccardoRunOff
+runOffCandidates[runOffCandidates$ID == 1361139, ]
+primaryCandidates[runOffCandidates$ID == 1362187, ]
+runOffCandidates[runOffCandidates$ID == 1362187, ]
+corteseRunOff <- runOffCandidates[runOffCandidates$ID == 1362187, ]#
+corteseRunOff$firstCol <- "runoff"#
+corteseRunOff$secCol <- "Cortese"#
+corteseRunOff$ID <- NULL#
+corteseRunOff <- corteseRunOff[ , c(5, 6, 2, 1, 3, 4)] #Reorder
+corteseRunOff
+summaryInfo <- rbind(nguyen, liccardo, oliverio, cortese, herrera, liccardoRunOff, corteseRunOff)#
+write.table(summaryInfo, "summaryInfo.txt", quote=FALSE, sep="," , row.names=FALSE, col.names=FALSE)#
+#
+getwd() #find summaryInfo.txt
